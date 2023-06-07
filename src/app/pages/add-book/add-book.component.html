@@ -1,0 +1,24 @@
+<h1 class="title_page">Ajouter une lecture</h1>
+<form>
+  <mat-form-field class="form-field">
+    <mat-label>Sélectionnez un livre</mat-label>
+    <input type="text"
+          placeholder=" le nom du livre"
+          aria-label="Select a book"
+          matInput
+          [formControl]="formBook"
+          [matAutocomplete]="auto"
+          (input)="filterBooks()">
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let book of filteredBooks" [value]="book.name">
+          <div class="input-field">
+            <img src={{book.image}} class="thumbnail-input"/>
+            <div>
+              <p class="title">{{book.name}} </p>
+              <p class="author">{{book.author}}</p>
+            </div>
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+</form>
