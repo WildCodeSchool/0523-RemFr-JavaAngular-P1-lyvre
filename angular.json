@@ -30,7 +30,7 @@
               "src/assets",
               {
                 "glob": "**/**",
-                "input": "./node_modules/leaflet/dist/leaflet.css",
+                "input": "./node_modules/leaflet/dist/images",
                 "output": "assets"
               }
             ],
