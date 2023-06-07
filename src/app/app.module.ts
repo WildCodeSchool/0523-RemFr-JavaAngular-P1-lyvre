@@ -6,6 +6,7 @@ import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from "@angular/common/http";
 
 import { DemoComponent } from './components/demo/demo.component';
 import { DemoPipe } from './pipes/demo.pipe';
@@ -32,6 +33,7 @@ import { AddBookComponent } from './pages/add-book/add-book.component';
     AddBookComponent
   ],
   imports: [
+    HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,

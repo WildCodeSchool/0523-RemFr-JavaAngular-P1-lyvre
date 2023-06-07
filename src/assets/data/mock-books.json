@@ -1,0 +1,201 @@
+[{
+    "name": "1984",
+    "author": "George Orwell",
+    "genre": ["Dystopie", "Science Fiction", "Fiction politique"],
+    "pages": 328,
+    "id": 1,
+    "upvote": 152,
+    "downvote": 2,
+    "image": "https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Le meilleur des mondes",
+    "author": "Aldous Huxley",
+    "genre": ["Dystopie", "Science Fiction", "Fiction politique"],
+    "pages": 288,
+    "id": 2,
+    "upvote": 124,
+    "downvote": 2,
+    "image": "https://m.media-amazon.com/images/I/61v7bRPlQPL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "La horde du contrevent",
+    "author": "Alain Damasio",
+    "genre": ["Science Fiction", "Fantasy"],
+    "pages": 736,
+    "id": 3,
+    "upvote": 127,
+    "downvote": 12,
+    "image": "https://m.media-amazon.com/images/I/814U8H+bKHL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Le seigneur des anneaux",
+    "author": "J.R.R. Tolkien",
+    "genre": ["Fantasy"],
+    "pages": 1216,
+    "id": 4,
+    "upvote": 152,
+    "downvote": 2,
+    "image": "https://m.media-amazon.com/images/I/711wTudJGtL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Farenheit 451",
+    "author": "Ray Bradbury",
+    "genre": ["Dystopie", "Science Fiction"],
+    "pages": 256,
+    "id": 5,
+    "upvote": 152,
+    "downvote": 2,
+    "image": "https://m.media-amazon.com/images/I/41Xe3FXKz6L._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Le cycle de Fondation",
+    "author": "Isaac Asimov",
+    "genre": ["Science Fiction"],
+    "pages": 384,
+    "id": 6,
+    "upvote": 114,
+    "downvote": 5,
+    "image": "https://m.media-amazon.com/images/I/41-47MWeV6L._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Harry Potter",
+    "author": "J.K. Rowling",
+    "genre": ["Fantasy"],
+    "pages": 384,
+    "id": 7,
+    "upvote": 252,
+    "downvote": 18,
+    "image": "https://m.media-amazon.com/images/I/916DM68L6cS._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "La peste",
+    "author": "Albert Camus",
+    "genre": ["Roman"],
+    "pages": 288,
+    "id": 8,
+    "upvote": 102,
+    "downvote": 8,
+    "image": "https://m.media-amazon.com/images/I/71bXQQ70h1L._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Shining",
+    "author": "Stephen King",
+    "genre": ["Horreur"],
+    "pages": 576,
+    "id": 9,
+    "upvote": 98,
+    "downvote": 6,
+    "image": "https://m.media-amazon.com/images/I/81imcWAv6SL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Orgueil et préjugés",
+    "author": "Jane Austen",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 10,
+    "upvote": 45,
+    "downvote": 8,
+    "image": "https://m.media-amazon.com/images/I/71SOEpvcA3L._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "L'étranger",
+    "author": "Albert Camus",
+    "genre": ["Roman"],
+    "pages": 192,
+    "id": 11,
+    "upvote": 98,
+    "downvote": 6,
+    "image": "https://m.media-amazon.com/images/I/81cUhLVeQQL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Madame Bovary",
+    "author": "Gustave Flaubert",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 12,
+    "upvote": 46,
+    "downvote": 10,
+    "image": "https://m.media-amazon.com/images/I/81EiPQuQM3L._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Le rouge et le noir",
+    "author": "Stendhal",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 13,
+    "upvote": 35,
+    "downvote": 1,
+    "image": "https://m.media-amazon.com/images/I/71MA4dKZrRL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Les misérables",
+    "author": "Victor Hugo",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 14,
+    "upvote": 35,
+    "downvote": 3,
+    "image": "https://m.media-amazon.com/images/I/61Jx5wL-LHL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Le comte de Monte-Cristo",
+    "author": "Alexandre Dumas",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 15,
+    "upvote": 23,
+    "downvote": 2,
+    "image": "https://m.media-amazon.com/images/I/71ZcP22phyL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Les trois mousquetaires",
+    "author": "Alexandre Dumas",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 16,
+    "upvote": 56,
+    "downvote": 4,
+    "image": "https://m.media-amazon.com/images/I/41QXRajfrSL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+    "name": "Pars vite et reviens tard",
+    "author": "Fred Vargas",
+    "genre": ["Thriller"],
+    "pages": 576,
+    "id": 17,
+    "upvote": 12,
+    "downvote": 1,
+    "image": "https://m.media-amazon.com/images/I/71FfPsoF65L._AC_UF1000,1000_QL80_.jpg"
+}, {
+    "name": "L'homme qui rit",
+    "author": "Victor Hugo",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 18,
+    "upvote": 12,
+    "downvote": 3,
+    "image": "https://m.media-amazon.com/images/I/81K3rZT0JxL._AC_UF1000,1000_QL80_.jpg"
+},
+    {
+    "name": "Le dernier jour d'un condamné",
+    "author": "Victor Hugo",
+    "genre": ["Roman"],
+    "pages": 576,
+    "id": 19,
+    "upvote": 21,
+    "downvote": 2,
+    "image": "https://m.media-amazon.com/images/I/61Dia9UUcML._AC_UF1000,1000_QL80_.jpg"
+    },
+{
+    "name": "Simetierre",
+    "author": "Stephen King",
+    "genre": ["Horreur"],
+    "pages": 576,
+    "id": 20,
+    "upvote": 56,
+    "downvote": 4,
+    "image": "https://m.media-amazon.com/images/I/818Xfm0wAEL._AC_UF1000,1000_QL80_.jpg"
+}
+
+]
