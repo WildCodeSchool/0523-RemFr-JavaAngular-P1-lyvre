@@ -48,3 +48,25 @@ body {
 .map-container {
     height: 100vh;
 }
+
+* {
+  font-family: 'Roboto';
+}
+
+.title_section_dashboard {
+  font-size: 1.5rem;
+  color : #0A0A0A;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 0;
+}
+
+.container_section_dashboard {
+  background-color: #F0EBE3;
+  border-radius: 20px ;
+  padding: 1rem;
+}
+
+.container_app {
+  padding: 1rem;
+}

@@ -13,6 +13,8 @@ import { DemoDirective } from './directives/demo.directive';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BookBoxComponent } from './pages/book-box/book-box.component';
 import { MapComponent } from './components/map/map.component';
+import { ReadingInProgressComponent } from './components/dashboard/reading-in-progress/reading-in-progress.component';
+import { ButtonComponent } from './components/UI/button/button.component';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { MapComponent } from './components/map/map.component';
     DemoDirective,
     DashboardComponent,
     BookBoxComponent,
-    MapComponent
+    MapComponent,
+    ReadingInProgressComponent,
+    ButtonComponent,
   ],
   imports: [
     BrowserModule,
