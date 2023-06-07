@@ -22,7 +22,6 @@ import { ButtonComponent } from './components/UI/button/button.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +44,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LeafletModule
+    LeafletModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
