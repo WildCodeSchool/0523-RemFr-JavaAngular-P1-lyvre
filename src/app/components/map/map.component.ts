@@ -1,17 +1,15 @@
 import { Component } from '@angular/core';
 import * as Leaflet from 'leaflet';
 
-// Leaflet.Icon.Default.imagePath = 'assets/';
 Leaflet.Icon.Default.mergeOptions({
-  iconRetinaUrl: 'assets/marker-icon-2x.png',
-  iconUrl: 'assets/marker-icon.png',
-  shadowUrl: 'assets/marker-shadow.png'
 });
+
 @Component({
   selector: 'app-map',
   templateUrl: './map.component.html',
   styleUrls: ['./map.component.scss']
 })
+
 export class MapComponent {
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];
@@ -22,21 +20,21 @@ export class MapComponent {
       })
     ],
     zoom: 16,
-    center: { lat: 28.626137, lng: 79.821603 }
+    center: { lat: 47.383331, lng: 0.68333 }
   }
 
   initMarkers() {
     const initialMarkers = [
       {
-        position: { lat: 28.625485, lng: 79.821091 },
+        position: { lat: 47.4029308004, lng: 0.6939477996 },
         draggable: true
       },
       {
-        position: { lat: 28.625293, lng: 79.817926 },
+        position: { lat: 47.3844517138, lng: 0.686212135 },
         draggable: false
       },
       {
-        position: { lat: 28.625182, lng: 79.81464 },
+        position: { lat: 47.3871406002, lng: 0.7228583997 },
         draggable: true
       }
     ];
@@ -51,24 +49,11 @@ export class MapComponent {
 
   generateMarker(data: any, index: number) {
     return Leaflet.marker(data.position, { draggable: data.draggable })
-      .on('click', (event) => this.markerClicked(event, index))
-      .on('dragend', (event) => this.markerDragEnd(event, index));
   }
 
   onMapReady($event: Leaflet.Map) {
     this.map = $event;
     this.initMarkers();
   }
-
-  mapClicked($event: any) {
-    console.log($event.latlng.lat, $event.latlng.lng);
-  }
-
-  markerClicked($event: any, index: number) {
-    console.log($event.latlng.lat, $event.latlng.lng);
-  }
-
-  markerDragEnd($event: any, index: number) {
-    console.log($event.target.getLatLng());
-  }
+  
 }
