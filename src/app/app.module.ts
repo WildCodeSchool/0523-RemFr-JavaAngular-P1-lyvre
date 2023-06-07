@@ -15,6 +15,7 @@ import { BookBoxComponent } from './pages/book-box/book-box.component';
 import { MapComponent } from './components/map/map.component';
 import { ReadingInProgressComponent } from './components/dashboard/reading-in-progress/reading-in-progress.component';
 import { ButtonComponent } from './components/UI/button/button.component';
+import { AddBookComponent } from './pages/add-book/add-book.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ButtonComponent } from './components/UI/button/button.component';
     MapComponent,
     ReadingInProgressComponent,
     ButtonComponent,
+    AddBookComponent
   ],
   imports: [
     BrowserModule,

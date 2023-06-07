@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-button',
@@ -7,6 +8,7 @@ import { Component, Input } from '@angular/core';
 })
 
 export class ButtonComponent {
+  constructor(private router: Router) {}
 
   @Input() title = '';
   @Input() onClick = () => { console.log("init")};

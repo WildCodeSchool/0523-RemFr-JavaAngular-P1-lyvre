@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-reading-in-progress',
@@ -7,9 +8,11 @@ import { Component } from '@angular/core';
 })
 export class ReadingInProgressComponent {
 
+  constructor(private router: Router) {}
+
   titleButton = "Ajouter une lecture"
 
   redirectToAddBook() {
-    console.log("yes")
+    this.router.navigate(['/add-book'])
   }
 }
