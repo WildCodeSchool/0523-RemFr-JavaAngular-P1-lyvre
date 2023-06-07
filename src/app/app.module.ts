@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +12,7 @@ import { DemoPipe } from './pipes/demo.pipe';
 import { DemoDirective } from './directives/demo.directive';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { BookBoxComponent } from './pages/book-box/book-box.component';
+import { MapComponent } from './components/map/map.component';
 
 
 @NgModule({
@@ -19,12 +22,14 @@ import { BookBoxComponent } from './pages/book-box/book-box.component';
     DemoPipe,
     DemoDirective,
     DashboardComponent,
-    BookBoxComponent
+    BookBoxComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    LeafletModule
   ],
   providers: [],
   bootstrap: [AppComponent]
