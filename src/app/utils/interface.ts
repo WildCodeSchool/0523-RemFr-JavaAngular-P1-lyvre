@@ -8,6 +8,7 @@ export interface IBook {
     upvode: number;
     downvote: number;
 }
+
 export interface RecordBookBox {
     datasetid: string;
     recordid: string;
