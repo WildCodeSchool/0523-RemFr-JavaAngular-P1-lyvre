@@ -30,6 +30,7 @@ export interface RecordFields {
     date_maj: string;
     code_insee: string;
     latitude: string;
+    photo: string;
 }
 
 export interface GeoShape {

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from "@angular/core";
 import * as Leaflet from "leaflet";
-import { GeoShape, RecordBookBox } from "../../utils/interface";
+import { GeoShape, RecordBookBox, RecordFields } from "../../utils/interface";
 import { BookBoxService } from "../../services/bookBox/book-box.service";
 import * as L from "leaflet";
 
@@ -53,7 +53,7 @@ export class MapComponent implements OnInit {
 
   initMarkers() {
     //génère tableau vide qui contiendra les marqueurs
-    const initialMarkers: any[] = [];
+    const initialMarkers: RecordFields[] = [];
 
     //observable = event que l'on va observer ($ = convention pour mentionner que c'est un observable)
     //Fait l'appel d'API
@@ -74,7 +74,7 @@ export class MapComponent implements OnInit {
     });
 
     //on reprend le tableau, et pour chaque coordonnée du tableau, on l'ajoute à la carte
-    const showMarker = (initialMarkers: any) => {
+    const showMarker = (initialMarkers: RecordFields[]) => {
       for (let i = 0; i < initialMarkers.length; i++) {
         const marker = Leaflet.marker([
           initialMarkers[i].geo_shape.coordinates[1],
