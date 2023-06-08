@@ -21,7 +21,7 @@ import { ReadingInProgressComponent } from './components/dashboard/reading-in-pr
 import { ButtonComponent } from './components/UI/button/button.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
-
+import { GoToMapComponent } from './components/dashboard/go-to-map/go-to-map.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MapComponent,
     ReadingInProgressComponent,
     ButtonComponent,
-    AddBookComponent
+    AddBookComponent,
+    GoToMapComponent
   ],
   imports: [
     MatInputModule,
@@ -45,7 +46,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LeafletModule
+    LeafletModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

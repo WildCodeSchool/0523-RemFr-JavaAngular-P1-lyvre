@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import * as Leaflet from 'leaflet';
+import { RecordBookBox } from 'src/app/utils/interface';
 
 Leaflet.Icon.Default.mergeOptions({
 });
@@ -11,6 +12,9 @@ Leaflet.Icon.Default.mergeOptions({
 })
 
 export class MapComponent {
+
+  @Input() bookBox: RecordBookBox[] = [];
+
   map!: Leaflet.Map;
   markers: Leaflet.Marker[] = [];
   options = {
