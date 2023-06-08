@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 import { LeafletModule } from '@asymmetrik/ngx-leaflet';
 
@@ -22,6 +23,8 @@ import { ButtonComponent } from './components/UI/button/button.component';
 import { AddBookComponent } from './pages/add-book/add-book.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { GoToMapComponent } from './components/dashboard/go-to-map/go-to-map.component';
+import { StoreModule } from '@ngrx/store';
+import { reducer } from './services/store/user.reducer';
 
 @NgModule({
   declarations: [
@@ -38,6 +41,7 @@ import { GoToMapComponent } from './components/dashboard/go-to-map/go-to-map.com
     GoToMapComponent
   ],
   imports: [
+    CommonModule,
     MatInputModule,
     ReactiveFormsModule,
     MatFormFieldModule,
@@ -47,7 +51,8 @@ import { GoToMapComponent } from './components/dashboard/go-to-map/go-to-map.com
     AppRoutingModule,
     BrowserAnimationsModule,
     LeafletModule,
-    HttpClientModule
+    HttpClientModule,
+    StoreModule.forRoot({userState:reducer})
   ],
   providers: [],
   bootstrap: [AppComponent]

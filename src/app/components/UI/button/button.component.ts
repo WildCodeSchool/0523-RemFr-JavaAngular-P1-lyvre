@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-button',
@@ -8,7 +9,7 @@ import { Router } from '@angular/router';
 })
 
 export class ButtonComponent {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private store: Store) {}
 
   @Input() title = '';
   @Input() onClick = () => { console.log("init")};

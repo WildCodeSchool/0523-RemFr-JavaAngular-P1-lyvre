@@ -21,4 +21,5 @@
         </mat-option>
       </mat-autocomplete>
     </mat-form-field>
-</form>
+    <app-button [title]="titleButton" [onClick]="addBook.bind(this, filteredBooks)"></app-button>
+  </form>
