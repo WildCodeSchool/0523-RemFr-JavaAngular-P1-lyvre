@@ -73,3 +73,17 @@ export interface ApiBookBox{
     records: RecordBookBox[];
     facet_groups: FacetGroup;
 }
+
+export interface IUser {
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+    reading_in_progress: IBookMinimized[];
+    reading_finished: IBookMinimized[];
+}
+
+export interface IBookMinimized {
+    id: number;
+    pages: number;
+}

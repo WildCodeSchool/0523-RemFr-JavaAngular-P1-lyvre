@@ -1,0 +1,22 @@
+{
+  "id": 12,
+  "name": "Utilisateur1",
+  "email": "utilisateur@gmail.com",
+  "password": "Test1234*",
+  "reading_in_progress": [
+    {
+      "id": 1,
+      "pages": 25
+    }
+  ],
+  "reading_finished": [
+    {
+      "id": 2,
+      "pages": 288
+    },
+    {
+      "id": 14,
+      "pages": 50
+    }
+  ]
+}
