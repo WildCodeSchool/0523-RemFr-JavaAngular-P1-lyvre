@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { IBook } from 'src/app/utils/interface';
 
 @Component({
@@ -7,6 +8,8 @@ import { IBook } from 'src/app/utils/interface';
   styleUrls: ['./book-list.component.scss']
 })
 export class BookListComponent implements OnInit {
+
+  constructor(private store: Store) {}
 
   @Input() books : IBook[] | null= [];
   @Input() showPages = false;
@@ -21,6 +24,10 @@ export class BookListComponent implements OnInit {
     } else {
       return 0
     }
+  }
+
+  deleteBook(book: IBook) {
+    this.store.dispatch({type: 'DELETE_BOOK_FROM_READING_IN_PROGRESS', payload: {book}})
   }
 
   ngOnInit() {

@@ -28,6 +28,7 @@ import { reducer } from './services/store/user.reducer';
 import { MyReadingsComponent } from './pages/my-readings/my-readings.component';
 import { SmallButtonComponent } from './components/UI/small-button/small-button.component';
 import { BookListComponent } from './components/book-list/book-list.component';
+import { MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { BookListComponent } from './components/book-list/book-list.component';
     BookListComponent
   ],
   imports: [
+    MatIconModule,
     CommonModule,
     MatInputModule,
     ReactiveFormsModule,

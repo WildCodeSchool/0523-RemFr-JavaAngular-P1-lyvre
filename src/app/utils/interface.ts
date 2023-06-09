@@ -81,11 +81,6 @@ export interface IUser {
     name: string;
     email: string;
     password: string;
-    reading_in_progress: IBookMinimized[];
-    reading_finished: IBookMinimized[];
-}
-
-export interface IBookMinimized {
-    id: number;
-    pages: number;
+    reading_in_progress: IBook[];
+    reading_finished: IBook[];
 }

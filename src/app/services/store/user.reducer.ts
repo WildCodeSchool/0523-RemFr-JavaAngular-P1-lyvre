@@ -47,6 +47,23 @@ export function reducer(state= initialState, action: any) {
           reading_in_progress: [...state.user.reading_in_progress, action.payload.book]
         }
       }
+    case 'DELETE_BOOK_FROM_READING_IN_PROGRESS':{
+      const index = state.user.reading_in_progress.findIndex((book: IBook) => book.id === action.payload.book.id)
+      const readingInProgress = [...state.user.reading_in_progress]
+      if(index !== -1) {
+        readingInProgress.splice(index, 1)
+        return {
+          ...state,
+          user: {
+            ...state.user,
+            reading_in_progress: readingInProgress
+          }
+        }
+      }
+      return {
+        ...state,
+      }
+    }
     default:
       return state;
   }
