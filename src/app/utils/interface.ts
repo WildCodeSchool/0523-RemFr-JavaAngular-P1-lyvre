@@ -5,8 +5,9 @@ export interface IBook {
     genre: string[];
     image: string;
     pages: number;
-    upvode: number;
+    upvote: number;
     downvote: number;
+    progress: number;
 }
 
 export interface RecordBookBox {

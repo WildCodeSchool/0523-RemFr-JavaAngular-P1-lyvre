@@ -1,0 +1,22 @@
+.container-small-button {
+  border-radius: 12px;
+  filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.25));
+  text-align: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: fit-content;
+  margin-right: auto;
+  margin-left: auto;
+  font-weight: 400;
+  font-size: 1.1rem;
+}
+
+.not-selected {
+  color: #0a0a0a;
+  background: #E4DCCF;
+}
+
+.selected {
+  color: #fff;
+  background: radial-gradient(50% 50% at 50% 50%, #648180 0%, #576F72 100%);
+}

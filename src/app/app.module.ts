@@ -25,6 +25,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { GoToMapComponent } from './components/dashboard/go-to-map/go-to-map.component';
 import { StoreModule } from '@ngrx/store';
 import { reducer } from './services/store/user.reducer';
+import { MyReadingsComponent } from './pages/my-readings/my-readings.component';
+import { SmallButtonComponent } from './components/UI/small-button/small-button.component';
+import { BookListComponent } from './components/book-list/book-list.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,10 @@ import { reducer } from './services/store/user.reducer';
     ReadingInProgressComponent,
     ButtonComponent,
     AddBookComponent,
-    GoToMapComponent
+    GoToMapComponent,
+    MyReadingsComponent,
+    SmallButtonComponent,
+    BookListComponent
   ],
   imports: [
     CommonModule,
