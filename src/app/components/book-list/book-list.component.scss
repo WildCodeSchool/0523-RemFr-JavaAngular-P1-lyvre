@@ -41,3 +41,13 @@
   color: #fff;
 }
 
+.delete-button {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  color: #fff;
+  padding: 0.5rem;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+}
