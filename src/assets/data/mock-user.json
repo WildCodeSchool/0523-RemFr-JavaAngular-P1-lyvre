@@ -1,0 +1,43 @@
+{
+  "id": 12,
+  "name": "Utilisateur1",
+  "email": "utilisateur@gmail.com",
+  "password": "Test1234*",
+  "reading_in_progress": [
+    {
+      "name": "1984",
+      "author": "George Orwell",
+      "genre": ["Dystopie", "Science Fiction", "Fiction politique"],
+      "pages": 328,
+      "id": 1,
+      "upvote": 152,
+      "downvote": 2,
+      "image": "https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg",
+      "progress": 125
+    }
+  ],
+  "reading_finished": [
+    {
+      "name": "Le cycle de Fondation",
+      "author": "Isaac Asimov",
+      "genre": ["Science Fiction"],
+      "pages": 384,
+      "id": 6,
+      "upvote": 114,
+      "downvote": 5,
+      "image": "https://m.media-amazon.com/images/I/41-47MWeV6L._AC_UF1000,1000_QL80_.jpg",
+      "progress": 384
+    },
+    {
+      "name": "Farenheit 451",
+      "author": "Ray Bradbury",
+      "genre": ["Dystopie", "Science Fiction"],
+      "pages": 256,
+      "id": 5,
+      "upvote": 152,
+      "downvote": 2,
+      "image": "https://m.media-amazon.com/images/I/41Xe3FXKz6L._AC_UF1000,1000_QL80_.jpg",
+      "progress": 256
+    }
+  ]
+}

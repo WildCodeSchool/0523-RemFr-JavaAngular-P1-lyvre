@@ -1,0 +1,12 @@
+<h1 class="title_page">Mes lectures</h1>
+<app-button [title]="titleButton" [onClick]="redirectToAddBook"></app-button>
+<div class="container-filter-buttons">
+  <app-small-button [title]="titleButtonFinished" [onClick]="filterBooksByFinished.bind(this, finished)" [display]="finished"></app-small-button>
+  <app-small-button [title]="titleButtonInProgress" [onClick]="filterBooksByInProgress.bind(this, finished)" [display]="!finished"></app-small-button>
+</div>
+<div *ngIf="finished">
+  <app-book-list [books]="booksFinished | async" [showPages]="false"></app-book-list>
+</div>
+<div *ngIf="!finished">
+  <app-book-list [books]="booksInProgress | async" [showPages]="true"></app-book-list>
+</div>

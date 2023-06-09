@@ -1,0 +1,17 @@
+<div class="container-book-list">
+  <div *ngFor="let book of books" class="container-book">
+    <div class="book-list">
+      <div class="relative">
+        <mat-icon aria-hidden="false" *ngIf="showPages" (click)="deleteBook(book)" class="delete-button" aria-label="Delete book from list" fontIcon="delete"></mat-icon>
+        <img src="{{book.image}}" alt="{{book.name}}" class="book-image">
+        <div class="book-overlay" *ngIf="showPages">
+          <p class="progress">{{book.progress}}/{{book.pages}}</p>
+        </div>
+      </div>
+      <div class="book-data">
+        <p class="name">{{book.name}}</p>
+        <p class="author">{{book.author}}</p>
+      </div>
+    </div>
+  </div>
+</div>

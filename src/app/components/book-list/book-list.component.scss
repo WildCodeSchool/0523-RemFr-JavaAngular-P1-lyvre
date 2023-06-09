@@ -1,0 +1,53 @@
+.book-image {
+  width: 100%;
+  height: 16rem;
+}
+
+.container-book-list{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0rem 1rem;
+}
+
+.book-data {
+  text-align: center;
+}
+
+.container-book {
+  margin-top: 1rem;
+}
+
+.name {
+  margin-top: 0.2rem;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+.author {
+  margin: 0.5rem;
+  font-style: italic;
+}
+
+.relative {
+  position: relative;
+}
+
+.book-overlay {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+
+.delete-button {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  color: #fff;
+  padding: 0.5rem;
+  right: 0.5rem;
+  top: 0.5rem;
+  cursor: pointer;
+}
