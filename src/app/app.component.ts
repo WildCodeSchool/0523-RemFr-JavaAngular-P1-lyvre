@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { IUser } from './utils/interface';
-import { selectUser, selectUserReadingInProgress } from './services/store/user.reducer'
+import { selectUser } from './services/store/user.reducer'
 import { UserService } from './services/user.service';
 
 @Component({

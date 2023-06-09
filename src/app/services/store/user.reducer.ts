@@ -1,4 +1,4 @@
-import { IUser } from "src/app/utils/interface";
+import { IBook, IUser } from "src/app/utils/interface";
 import { createSelector } from "@ngrx/store";
 
 export interface IUserState {
@@ -22,9 +22,14 @@ export const selectUser = createSelector(
   (state: any) => state.userState.user
 );
 
-export const selectUserReadingInProgress = createSelector(
+export const selectReadingsInProgress = createSelector(
   selectUserState,
   (state: any) => state.userState.user.reading_in_progress
+);
+
+export const selectReadingsFinished = createSelector(
+  selectUserState,
+  (state: any) => state.userState.user.reading_finished
 );
 
 export function reducer(state= initialState, action: any) {
@@ -39,7 +44,7 @@ export function reducer(state= initialState, action: any) {
         ...state,
         user : {
           ...state.user,
-          reading_in_progress: [...state.user.reading_in_progress, action.payload]
+          reading_in_progress: [...state.user.reading_in_progress, action.payload.book]
         }
       }
     default:
