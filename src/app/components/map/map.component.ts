@@ -1,7 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 import * as Leaflet from "leaflet";
-import { GeoShape, RecordBookBox } from "src/app/utils/interface";
-import { BookBoxService } from "src/app/services/bookBox/book-box.service";
+import { GeoShape, RecordBookBox, RecordFields } from "../../utils/interface";
+import { BookBoxService } from "../../services/bookBox/book-box.service";
+import * as L from "leaflet";
 
 Leaflet.Icon.Default.mergeOptions({});
 
@@ -42,7 +43,7 @@ export class MapComponent implements OnInit {
       // La carte se recentre sur la position de l'utilisateur, avec une valeur de zoom à 16
       this.map.setView([this.userLatitude, this.userLongitude], 16);
     });
-  }
+  };
 
   //quand carte prête, on initialise la map et les marqueurs
   onMapReady($event: Leaflet.Map) {
@@ -52,7 +53,7 @@ export class MapComponent implements OnInit {
 
   initMarkers() {
     //génère tableau vide qui contiendra les marqueurs
-    const initialMarkers: GeoShape[] = [];
+    const initialMarkers: RecordFields[] = [];
 
     //observable = event que l'on va observer ($ = convention pour mentionner que c'est un observable)
     //Fait l'appel d'API
@@ -63,7 +64,7 @@ export class MapComponent implements OnInit {
       next(apiBookBox) {
         //pour chaque valeur envoyée on l'envoie dans le tableau
         apiBookBox.records.forEach(function (record) {
-          initialMarkers.push(record.fields.geo_shape);
+          initialMarkers.push(record.fields);
         });
       },
       //Une fois tout ok, on les affiche
@@ -72,13 +73,29 @@ export class MapComponent implements OnInit {
       },
     });
 
-    //on reprend le tableau, et pour chaque coordonée du tableau, on l'ajoute à la carte
-    const showMarker = (initialMarkers: GeoShape[]) => {
+    //on reprend le tableau, et pour chaque coordonnée du tableau, on l'ajoute à la carte
+    const showMarker = (initialMarkers: RecordFields[]) => {
       for (let i = 0; i < initialMarkers.length; i++) {
         const marker = Leaflet.marker([
-          initialMarkers[i].coordinates[1],
-          initialMarkers[i].coordinates[0],
+          initialMarkers[i].geo_shape.coordinates[1],
+          initialMarkers[i].geo_shape.coordinates[0],
         ]);
+
+        let contenuPopup = initialMarkers[i].nom + "<br>" + initialMarkers[i].adresse + " " + initialMarkers[i].code_postal + " " + initialMarkers[i].commune;
+        
+        if(initialMarkers[i].gestionnaire){
+          contenuPopup += "<br>" + "Gestionnaire : " + initialMarkers[i].gestionnaire;
+        } else {
+          contenuPopup += "";
+        }
+       
+        if(initialMarkers[i].photo){
+          contenuPopup += "<br><img class=\"leaflet-popup-content-img\" width= 60%; src=\"" + initialMarkers[i].photo + "\">";
+        } else {
+          contenuPopup += "";
+        }
+        marker.bindPopup(contenuPopup).openPopup();
+
         marker.addTo(this.map);
       }
     };
