@@ -48,7 +48,7 @@ export function reducer(state= initialState, action: any) {
         }
       }
     case 'DELETE_BOOK_FROM_READING_IN_PROGRESS':{
-      const index = state.user.reading_in_progress.findIndex((book: IBook) => book.id === action.payload.book.id)
+      const index = state.user.reading_in_progress.findIndex((book: IBook) => book.id === action.payload.book.id && book.progress === action.payload.book.progress)
       const readingInProgress = [...state.user.reading_in_progress]
       if(index !== -1) {
         readingInProgress.splice(index, 1)
