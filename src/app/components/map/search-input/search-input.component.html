@@ -1,0 +1,21 @@
+<form class="input">
+  <mat-form-field class="form-field">
+    <mat-label>Renseignez votre adresse</mat-label>
+    <input type="text"
+          placeholder="Adresse"
+          aria-label="Select an address"
+          matInput
+          [formControl]="formAddress"
+          [matAutocomplete]="auto"
+          (input)="getAddress($event)"
+          #addressInput
+        >
+        <mat-autocomplete #auto="matAutocomplete" (optionSelected)="onAddressSelected($event)">
+          <mat-option *ngFor="let address of addresses" [value]="address">
+          <div class="input-field">
+            {{address.properties.label}}
+          </div>
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>

@@ -1,0 +1,10 @@
+.input {
+  position: absolute;
+  left: 50%;
+  top: 2rem;
+  transform: translateX(-50%);
+  z-index: 100000;
+}
+.form-field {
+  width: 100%;
+}
