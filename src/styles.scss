@@ -87,3 +87,46 @@ body {
 .flex {
     display: flex;
 }
+
+.leaflet-popup-content-wrapper {
+  background:#f2f2f2 !important;
+  color:black !important;
+  line-height:24px;
+  border-radius: 0px;
+}
+
+.leaflet-popup-tip{
+  background:#f2f2f2 !important;
+}
+
+.leaflet-popup-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 12rem;
+}
+
+.leaflet-popup{
+  width: 15rem;
+}
+
+.leaflet-popup-content-img{
+  margin-bottom: 1.4rem;
+  width: 50%;
+}
+
+.text-popup{
+  text-align: center;
+  font-weight: bold;
+}
+
+.text-popup-italic{
+  font-style: italic;
+  text-align: center;
+}
+
+@media all and (max-width: 768px){
+  .leaflet-popup-content-img{
+    display: none;
+  }
+}
