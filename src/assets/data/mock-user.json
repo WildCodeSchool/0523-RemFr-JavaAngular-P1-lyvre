@@ -14,7 +14,8 @@
       "downvote": 0,
       "image": "https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg",
       "progress": 125,
-      "isFinished": false
+      "isFinished": false,
+      "lastUpdate" : "2023-06-14T00:00:00.000Z"
     }
   ],
   "reading_finished": [
@@ -28,7 +29,8 @@
       "downvote": 0,
       "image": "https://m.media-amazon.com/images/I/41-47MWeV6L._AC_UF1000,1000_QL80_.jpg",
       "progress": 384,
-      "isFinished": true
+      "isFinished": true,
+      "lastUpdate" : "2023-05-14T00:00:00.000Z"
     },
     {
       "name": "Farenheit 451",
@@ -40,7 +42,21 @@
       "downvote": 1,
       "image": "https://m.media-amazon.com/images/I/41Xe3FXKz6L._AC_UF1000,1000_QL80_.jpg",
       "progress": 256,
-      "isFinished": true
+      "isFinished": true,
+      "lastUpdate" : "2023-06-02T00:00:00.000Z"
+    },
+    {
+      "name": "Simetierre",
+      "author": "Stephen King",
+      "genre": ["Horreur"],
+      "pages": 576,
+      "id": 20,
+      "upvote": 0,
+      "downvote": 0,
+      "image": "https://m.media-amazon.com/images/I/818Xfm0wAEL._AC_UF1000,1000_QL80_.jpg",
+      "progress": 576,
+      "isFinished": false,
+      "lastUpdate" : "2023-06-12T00:00:00.000Z"
     }
   ]
 }

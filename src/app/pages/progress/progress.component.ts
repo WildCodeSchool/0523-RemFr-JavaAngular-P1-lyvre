@@ -30,7 +30,7 @@ export class ProgressComponent implements OnInit {
         downvote: 0,
         progress: 0,
         isFinished: false,
-        //lastUpdate: Date.now()
+        lastUpdate: new Date()
     };
     booksInProgress: Observable<IBook[]> =
         this.store.select(selectAllReadings) || [];
@@ -80,6 +80,7 @@ export class ProgressComponent implements OnInit {
         this.progress = this.pages.value || 0;
         const book = { ...this.book };
         book.progress = this.progress;
+        book.lastUpdate = new Date();
         this.store.dispatch({
             type: "BOOK_IS_UPDATED",
             payload: book,
