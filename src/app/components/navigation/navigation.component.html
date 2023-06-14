@@ -1,0 +1,54 @@
+<div id="nav-burger">
+    <button
+        mat-icon-button
+        [matMenuTriggerFor]="menu"
+        aria-label="Example icon-button with a menu"
+    >
+        <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+            <a routerLink="" routerLinkActive="active"
+                ><mat-icon>home</mat-icon> <span>Accueil</span></a
+            >
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>perm_identity</mat-icon>
+            <span>Profil</span>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>assessment</mat-icon>
+            <span>Top livres</span>
+        </button>
+        <button mat-menu-item>
+            <a routerLink="/book-box" routerLinkActive="active"
+                ><mat-icon>location_on</mat-icon> <span>Boîte à livres</span></a
+            >
+        </button>
+        <button mat-menu-item>
+            <a routerLink="/my-readings" routerLinkActive="active">
+                <mat-icon>library_books</mat-icon>
+                <span>Mes Lectures</span>
+            </a>
+        </button>
+        <button mat-menu-item>
+            <a routerLink="/add-book" routerLinkActive="active">
+                <mat-icon>library_add</mat-icon>
+                <span>Ajouter un livre</span>
+            </a>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>stars</mat-icon>
+            <span>Mes badges</span>
+        </button>
+        <button mat-menu-item disabled>
+            <mat-icon>info</mat-icon>
+            <span>Contact</span>
+        </button>
+    </mat-menu>
+    <div id="logo-nav">
+        <a routerLink="" routerLinkActive="active">
+            <mat-icon>hourglass_full</mat-icon>
+        </a>
+    </div>
+</div>
