@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from "@angular/core";
 import * as Leaflet from "leaflet";
-import { GeoShape, RecordBookBox, RecordFields } from "../../utils/interface";
+import { RecordBookBox, RecordFields } from "../../utils/interface";
 import { BookBoxService } from "../../services/bookBox/book-box.service";
 import * as L from "leaflet";
-import "esri-leaflet";
 
 Leaflet.Icon.Default.mergeOptions({});
 
@@ -21,6 +20,13 @@ export class MapComponent implements OnInit {
     //TODO : Connecter les résultats de la géolocalisation au formulaire
     //TODO : Renvoyer l'adresse exacte via les coordonées Latitude/Longitude
     //API du gouvernement : https://adresse.data.gouv.fr/api-doc/adresse
+  getCoordinates(event: [number, number]) {
+    this.userLatitude = event[1];
+    this.userLongitude = event[0];
+    this.map.setView([this.userLatitude, this.userLongitude], 16);
+    const marker =  Leaflet.marker([this.userLatitude, this.userLongitude]).addTo(this.map);
+    marker.bindPopup("Vous êtes ici").openPopup();
+  }
 
     //47.39049402643878, 0.6893818997045823 coordonnées de l'hotel de ville de tours, emplacement arbitraire par défaut
     public userLatitude = 47.39049402643878;

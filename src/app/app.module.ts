@@ -32,6 +32,8 @@ import { MyReadingsComponent } from "./pages/my-readings/my-readings.component";
 import { SmallButtonComponent } from "./components/UI/small-button/small-button.component";
 import { BookListComponent } from "./components/book-list/book-list.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
+import { ChartComponent } from './components/dashboard/chart/chart.component';
+import { SearchInputComponent } from './components/map/search-input/search-input.component';
 
 @NgModule({
     declarations: [
@@ -50,6 +52,8 @@ import { NavigationComponent } from "./components/navigation/navigation.componen
         SmallButtonComponent,
         BookListComponent,
         NavigationComponent,
+        SearchInputComponent,
+        ChartComponent,
     ],
     imports: [
         MatButtonModule,
