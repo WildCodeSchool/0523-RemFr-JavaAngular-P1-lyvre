@@ -10,10 +10,11 @@
       "genre": ["Dystopie", "Science Fiction", "Fiction politique"],
       "pages": 328,
       "id": 1,
-      "upvote": 152,
-      "downvote": 2,
+      "upvote": 0,
+      "downvote": 0,
       "image": "https://m.media-amazon.com/images/I/81StSOpmkjL._AC_UF1000,1000_QL80_.jpg",
-      "progress": 125
+      "progress": 125,
+      "isFinished": false
     }
   ],
   "reading_finished": [
@@ -23,10 +24,11 @@
       "genre": ["Science Fiction"],
       "pages": 384,
       "id": 6,
-      "upvote": 114,
-      "downvote": 5,
+      "upvote": 1,
+      "downvote": 0,
       "image": "https://m.media-amazon.com/images/I/41-47MWeV6L._AC_UF1000,1000_QL80_.jpg",
-      "progress": 384
+      "progress": 384,
+      "isFinished": true
     },
     {
       "name": "Farenheit 451",
@@ -34,10 +36,11 @@
       "genre": ["Dystopie", "Science Fiction"],
       "pages": 256,
       "id": 5,
-      "upvote": 152,
-      "downvote": 2,
+      "upvote": 0,
+      "downvote": 1,
       "image": "https://m.media-amazon.com/images/I/41Xe3FXKz6L._AC_UF1000,1000_QL80_.jpg",
-      "progress": 256
+      "progress": 256,
+      "isFinished": true
     }
   ]
 }

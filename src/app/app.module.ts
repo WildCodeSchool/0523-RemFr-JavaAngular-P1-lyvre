@@ -14,6 +14,8 @@ import { MatInputModule } from "@angular/material/input";
 import { MatIconModule } from "@angular/material/icon";
 import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
+import { MatProgressBarModule } from "@angular/material/progress-bar";
+import { MatDialogModule } from "@angular/material/dialog";
 
 import { DemoComponent } from "./components/demo/demo.component";
 import { DemoPipe } from "./pipes/demo.pipe";
@@ -34,6 +36,7 @@ import { BookListComponent } from "./components/book-list/book-list.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
 import { ChartComponent } from './components/dashboard/chart/chart.component';
 import { SearchInputComponent } from './components/map/search-input/search-input.component';
+import { ProgressComponent } from './pages/progress/progress.component';
 
 @NgModule({
     declarations: [
@@ -54,6 +57,7 @@ import { SearchInputComponent } from './components/map/search-input/search-input
         NavigationComponent,
         SearchInputComponent,
         ChartComponent,
+        ProgressComponent,
     ],
     imports: [
         MatButtonModule,
@@ -72,6 +76,8 @@ import { SearchInputComponent } from './components/map/search-input/search-input
         LeafletModule,
         HttpClientModule,
         StoreModule.forRoot({ userState: reducer }),
+        MatProgressBarModule,
+        MatDialogModule
     ],
     providers: [],
     bootstrap: [AppComponent],

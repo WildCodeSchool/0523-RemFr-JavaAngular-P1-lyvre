@@ -1,0 +1,45 @@
+<!--Afficher l'image du livre selectionné-->
+<div id="book-content">
+    <div><img src="{{this.book.image}}" alt="{{this.book.name}}">
+
+        <!--On boucle sur les genres du livre que l'on a select et on affiche ceux qui lui sont liés-->
+        <div class="genre" *ngFor="let genre of this.book.genre">
+            {{genre}}
+        </div>
+    </div>
+    <div>
+        <h1>{{this.book.name}}</h1>
+        <h2>{{this.book.author}}</h2>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nulla illum aut! Necessitatibus, nemo
+            iusto
+            vero quam explicabo magni est veniam totam nulla voluptatibus cum modi recusandae ad dolores consequatur!
+        </p>
+    </div>
+</div>
+
+<div class="progress-bar">
+    <h3>Ma progression : {{this.progressPercentage}}%</h3>
+    <p>{{this.progress}}/{{this.book.pages}} pages</p>
+    <mat-progress-bar class="mat-progress-bar" mode="determinate" value={{this.progressPercentage}}></mat-progress-bar>
+
+    <form>
+        <label for="progress">Nombre de pages lues </label>
+        <input [formControl]="pages" type="number" value="{{book.pages}}" max="{{this.book.pages}}">
+        <button type="button" (click)="onSubmit()">Enregistrer</button>
+    </form>
+
+</div>
+
+<div class="like">
+    <span>
+        <mat-icon (click)="likeOrDislike('like');bookLike()" [ngClass]="{'liked': isLiked, 'disliked':false}" id="thumb_up">thumb_up</mat-icon>
+    </span>
+        <mat-icon (click)="likeOrDislike('dislike');bookDislike()" [ngClass]="{'disliked': isDisliked, 'liked': false}" id="thumb_down">thumb_down</mat-icon>
+</div>
+
+<app-button
+    *ngIf="!book.isFinished"
+    [title]="titleButton"
+    [onClick]="markAsFinished.bind(this,book)">
+</app-button>
