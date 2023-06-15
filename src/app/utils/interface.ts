@@ -8,6 +8,7 @@ export interface IBook {
     upvote: number;
     downvote: number;
     progress: number;
+    isFinished: boolean;
 }
 
 export interface RecordBookBox {
