@@ -40,6 +40,7 @@ import { SearchInputComponent } from './components/map/search-input/search-input
 import { ProgressComponent } from './pages/progress/progress.component';
 import { ChartLineComponent } from './components/dashboard/chart/chart-line/chart-line.component';
 import { ChartComponent } from './components/dashboard/chart/chart.component';
+import { CarouselComponent } from './components/carousel/carousel.component';
 
 @NgModule({
     declarations: [
@@ -63,6 +64,7 @@ import { ChartComponent } from './components/dashboard/chart/chart.component';
         ChartLineComponent,
         ChartComponent,
         ProgressComponent,
+        CarouselComponent,
     ],
     imports: [
         NgChartsModule,
