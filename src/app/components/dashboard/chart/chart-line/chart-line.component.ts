@@ -20,7 +20,7 @@ export class ChartLineComponent implements OnInit{
   currentMonth = new Date().getMonth();
   currentYear = new Date().getFullYear();
 
-  nbBooksReadPerMonth = [0, 0, 0, 0, 0, 0];
+  nbBooksReadPerMonth = [0, 0, 0, 0, 0, 0]; // Tableau representant le nombre de livres totaux terminés par mois
 
   ngOnInit(): void {
     this.store.select(selectReadingsFinished).pipe(map((books : any) => {
@@ -28,9 +28,8 @@ export class ChartLineComponent implements OnInit{
           const month = new Date(book.lastUpdate).getMonth()
           const year = new Date(book.lastUpdate).getFullYear()
 
-          console.log(book)
           if(month === this.currentMonth && year === this.getYear(0)) {
-            this.nbBooksReadPerMonth[5]++
+            this.nbBooksReadPerMonth[5]++ 
           }
           if(month === this.currentMonth - 1 && year === this.getYear(1)) {
             this.nbBooksReadPerMonth[4]++

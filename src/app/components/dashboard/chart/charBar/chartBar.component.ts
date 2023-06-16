@@ -56,7 +56,7 @@ export class ChartBarComponent implements OnInit{
   public barChartData: ChartConfiguration<'bar'>['data'] = {
     labels: [ 'SF', 'Rom.', 'Fantasy', 'Bio', 'Thri.', 'Hor.', 'Other' ],
     datasets: [
-      { data: [this.sfBooks, 0,0,0,0,2,0], label: 'Livres lus par catégorie',  backgroundColor: ['#3f51b5', '#000', '#BC07E6', '#E53F56', '#F0A907', '#43DB98'] },
+      { data: [0,0,0,0,0,0], label: 'Livres lus par catégorie',  backgroundColor: ['#3f51b5', '#000', '#BC07E6', '#E53F56', '#F0A907', '#43DB98'] },
     ],
 
   };

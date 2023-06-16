@@ -17,6 +17,7 @@ export class ProgressComponent implements OnInit {
         private store: Store,
         private router: Router
     ) {}
+    
     //on récupère le param id
     id = this.activatedRoute.snapshot.paramMap.get("id");
     book: IBook = {
