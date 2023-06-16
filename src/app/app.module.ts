@@ -16,7 +16,7 @@ import { MatMenuModule } from "@angular/material/menu";
 import { MatButtonModule } from "@angular/material/button";
 import { MatProgressBarModule } from "@angular/material/progress-bar";
 import { MatDialogModule } from "@angular/material/dialog";
-import { NgChartsModule } from 'ng2-charts';
+import { NgChartsModule } from "ng2-charts";
 
 import { DemoComponent } from "./components/demo/demo.component";
 import { DemoPipe } from "./pipes/demo.pipe";
@@ -35,13 +35,16 @@ import { MyReadingsComponent } from "./pages/my-readings/my-readings.component";
 import { SmallButtonComponent } from "./components/UI/small-button/small-button.component";
 import { BookListComponent } from "./components/book-list/book-list.component";
 import { NavigationComponent } from "./components/navigation/navigation.component";
-import { ChartBarComponent } from './components/dashboard/chart/charBar/chartBar.component';
-import { SearchInputComponent } from './components/map/search-input/search-input.component';
-import { ProgressComponent } from './pages/progress/progress.component';
-import { ChartLineComponent } from './components/dashboard/chart/chart-line/chart-line.component';
-import { ChartComponent } from './components/dashboard/chart/chart.component';
-import { CarouselComponent } from './components/carousel/carousel.component';
-import { FooterComponent } from './components/footer/footer.component';
+import { ChartBarComponent } from "./components/dashboard/chart/charBar/chartBar.component";
+import { SearchInputComponent } from "./components/map/search-input/search-input.component";
+import { ProgressComponent } from "./pages/progress/progress.component";
+import { ChartLineComponent } from "./components/dashboard/chart/chart-line/chart-line.component";
+import { ChartComponent } from "./components/dashboard/chart/chart.component";
+import { ContactComponent } from "./pages/contact/contact.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
+import { CarouselComponent } from "./components/carousel/carousel.component";
+import { MatStepperModule } from "@angular/material/stepper";
 
 @NgModule({
     declarations: [
@@ -67,6 +70,8 @@ import { FooterComponent } from './components/footer/footer.component';
         ProgressComponent,
         CarouselComponent,
         FooterComponent,
+        ContactComponent,
+        PageNotFoundComponent,
     ],
     imports: [
         NgChartsModule,
@@ -77,6 +82,7 @@ import { FooterComponent } from './components/footer/footer.component';
         CommonModule,
         MatInputModule,
         ReactiveFormsModule,
+        MatStepperModule,
         MatFormFieldModule,
         MatAutocompleteModule,
         HttpClientModule,
@@ -87,7 +93,7 @@ import { FooterComponent } from './components/footer/footer.component';
         HttpClientModule,
         StoreModule.forRoot({ userState: reducer }),
         MatProgressBarModule,
-        MatDialogModule
+        MatDialogModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

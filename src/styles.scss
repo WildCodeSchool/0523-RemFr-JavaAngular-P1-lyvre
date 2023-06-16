@@ -11,7 +11,7 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$angular-template-primary: mat.define-palette(mat.$teal-palette, 200);
+$angular-template-primary: mat.define-palette(mat.$cyan-palette, 900);
 $angular-template-accent: mat.define-palette(mat.$orange-palette, 50);
 
 // The warn palette is optional (defaults to red).
@@ -80,7 +80,7 @@ body {
     padding: 1rem;
 }
 
-.container_section_dashboard_margin{
+.container_section_dashboard_margin {
     margin-top: 2.5rem;
 }
 
@@ -89,44 +89,44 @@ body {
 }
 
 .leaflet-popup-content-wrapper {
-  background:#f2f2f2 !important;
-  color:black !important;
-  line-height:24px;
-  border-radius: 0px;
+    background: #f2f2f2 !important;
+    color: black !important;
+    line-height: 24px;
+    border-radius: 0px;
 }
 
-.leaflet-popup-tip{
-  background:#f2f2f2 !important;
+.leaflet-popup-tip {
+    background: #f2f2f2 !important;
 }
 
-.leaflet-popup-content{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 12rem;
+.leaflet-popup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 12rem;
 }
 
-.leaflet-popup{
-  width: 15rem;
+.leaflet-popup {
+    width: 15rem;
 }
 
-.leaflet-popup-content-img{
-  margin-bottom: 1.4rem;
-  width: 50%;
+.leaflet-popup-content-img {
+    margin-bottom: 1.4rem;
+    width: 50%;
 }
 
-.text-popup{
-  text-align: center;
-  font-weight: bold;
+.text-popup {
+    text-align: center;
+    font-weight: bold;
 }
 
-.text-popup-italic{
-  font-style: italic;
-  text-align: center;
+.text-popup-italic {
+    font-style: italic;
+    text-align: center;
 }
 
-@media all and (max-width: 768px){
-  .leaflet-popup-content-img{
-    display: none;
-  }
+@media all and (max-width: 768px) {
+    .leaflet-popup-content-img {
+        display: none;
+    }
 }
