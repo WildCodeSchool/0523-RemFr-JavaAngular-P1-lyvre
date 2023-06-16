@@ -2,7 +2,16 @@
 <div class="carousel">
     <ng-container *ngFor="let slide of slides; let i = index">
         <!-- <img *ngIf="i === currentSlide" [src]="slide.src" class="slide" @carouselAnimation /> -->
-        <div *ngIf="i === currentSlide" class="slide" @carouselAnimation> <h1>{{slide | json}}</h1> <br> <input type="number" [value]="slide.progress"></div>
+        <div *ngIf="i === currentSlide" class="slide" @carouselAnimation> 
+            <div class="flex">
+                <img src="{{slide.image}}" alt="{{slide.name}}"/>
+                <div>
+                    <h3>{{slide.name}}</h3>
+                    <p>{{slide.author}}</p>
+                    <button (click)="redirectToReadingInProgress(slide.id)" class="btnProgress">Noter ma progression</button>
+                </div>
+            </div> 
+        </div>
     </ng-container>
 
     <!-- controls -->

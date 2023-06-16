@@ -1,6 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { trigger, transition, style, animate, useAnimation } from '@angular/animations';
 import { fadeIn, fadeOut, scaleIn, scaleOut } from './carousel.animations';
+import { IBook } from 'src/app/utils/interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carousel',
@@ -8,8 +10,8 @@ import { fadeIn, fadeOut, scaleIn, scaleOut } from './carousel.animations';
   styleUrls: ['./carousel.component.scss'],
   animations: [
     trigger("carouselAnimation", [
-      transition("void => *", [useAnimation(fadeIn, {params: {time: '1300ms'}})]),
-      transition("* => void", [useAnimation(fadeOut, {params: {time: '1300ms'}})]),
+      transition("void => *", [useAnimation(fadeIn, {params: {time: '500ms'}})]),
+      transition("* => void", [useAnimation(fadeOut, {params: {time: '500ms'}})]),
        /* scale */
        transition("void => *", [useAnimation(scaleIn, {params: { time: '500ms' }} )]),
        transition("* => void", [useAnimation(scaleOut, {params: { time: '500ms' }})]),
@@ -18,19 +20,25 @@ import { fadeIn, fadeOut, scaleIn, scaleOut } from './carousel.animations';
 })
 export class CarouselComponent {
   //je recup les slides ici
-  @Input() slides: any;
+
+  constructor(private router: Router){}
+  @Input() slides: IBook[] = [];
 
   currentSlide = 0;
 
   onPreviousClick() {
     const previous = this.currentSlide - 1;
     this.currentSlide = previous < 0 ? this.slides.length - 1 : previous;
-    console.log('previous clicked, new current slide is: ', this.currentSlide);
   }
 
   onNextClick() {
     const next = this.currentSlide + 1;
     this.currentSlide = next === this.slides.length ? 0 : next;
-    console.log('next clicked, new current slide is : ', this.currentSlide);
   }
+
+    //redirection vers les lectures en cours pour ajout de la progression
+    buttonTitle = "Ma progression"
+    redirectToReadingInProgress(id: number){
+      this.router.navigate(['/progress', id ])
+    }
 }
