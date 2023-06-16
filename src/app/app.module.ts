@@ -41,6 +41,7 @@ import { ProgressComponent } from './pages/progress/progress.component';
 import { ChartLineComponent } from './components/dashboard/chart/chart-line/chart-line.component';
 import { ChartComponent } from './components/dashboard/chart/chart.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
     declarations: [
@@ -65,6 +66,7 @@ import { CarouselComponent } from './components/carousel/carousel.component';
         ChartComponent,
         ProgressComponent,
         CarouselComponent,
+        FooterComponent,
     ],
     imports: [
         NgChartsModule,
