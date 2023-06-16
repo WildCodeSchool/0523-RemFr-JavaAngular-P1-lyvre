@@ -1,10 +1,15 @@
 .input {
   position: absolute;
   left: 50%;
-  top: 2rem;
+  bottom: 1rem;
   transform: translateX(-50%);
   z-index: 100000;
+  width: 90%;
 }
+
 .form-field {
+  width: 100%;
+}
+*.width100 {
   width: 100%;
 }

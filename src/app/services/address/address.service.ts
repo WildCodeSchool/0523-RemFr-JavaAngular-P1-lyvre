@@ -13,4 +13,8 @@ export class AddressService {
   getAddress(data: string): Observable<FeatureCollection> {
     return this.http.get<FeatureCollection>("https://api-adresse.data.gouv.fr/search/?q=" + data)
   }
+
+  getAddressFromPosition(data: [number, number]): Observable<FeatureCollection> {
+    return this.http.get<FeatureCollection>(`https://api-adresse.data.gouv.fr/reverse/?lon=${data[0]}&lat=${data[1]}`)
+  }
 }

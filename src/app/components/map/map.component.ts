@@ -3,6 +3,7 @@ import * as Leaflet from "leaflet";
 import { RecordBookBox, RecordFields } from "../../utils/interface";
 import { BookBoxService } from "../../services/bookBox/book-box.service";
 import * as L from "leaflet";
+import { AddressService } from "src/app/services/address/address.service";
 
 Leaflet.Icon.Default.mergeOptions({});
 
@@ -12,9 +13,11 @@ Leaflet.Icon.Default.mergeOptions({});
     styleUrls: ["./map.component.scss"],
 })
 export class MapComponent implements OnInit {
-    constructor(private bookBoxService: BookBoxService) {}
+    constructor(private bookBoxService: BookBoxService, private addressService: AddressService) {}
 
     @Input() bookBox: RecordBookBox[] = [];
+
+    address: string = "";
 
     map!: Leaflet.Map;
     //TODO : Connecter les résultats de la géolocalisation au formulaire
@@ -55,7 +58,13 @@ export class MapComponent implements OnInit {
             // Dans le cas où l'utilisateur autorise la géolocalisation, on change les coordonées avec celles que donnent le navigateur
             this.userLatitude = position.coords.latitude;
             this.userLongitude = position.coords.longitude;
-
+            this.addressService.getAddressFromPosition([position.coords.longitude, position.coords.latitude]).subscribe((data) => {
+                this.address = data.features[0].properties.label
+            })
+            Leaflet.marker([
+                this.userLatitude,
+                this.userLongitude,
+            ]).addTo(this.map);
             // La carte se recentre sur la position de l'utilisateur, avec une valeur de zoom à 16
             this.map.setView([this.userLatitude, this.userLongitude], 16);
         });
