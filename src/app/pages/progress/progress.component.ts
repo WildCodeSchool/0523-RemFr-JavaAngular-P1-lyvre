@@ -3,8 +3,10 @@ import { FormControl } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Store } from "@ngrx/store";
 import { Observable, map } from "rxjs";
-import { selectAllReadings } from "src/app/services/store/user.reducer";
-import { IBook } from "src/app/utils/interface";
+import { isBadgeCompleted } from "src/app/services/store/badges";
+import { initialState } from "src/app/services/store/initialState";
+import { selectAllReadings, selectUser } from "src/app/services/store/user.reducer";
+import { IBook, IUser } from "src/app/utils/interface";
 
 @Component({
     selector: "app-progress",
@@ -17,7 +19,7 @@ export class ProgressComponent implements OnInit {
         private store: Store,
         private router: Router
     ) {}
-    
+
     //on récupère le param id
     id = this.activatedRoute.snapshot.paramMap.get("id");
     book: IBook = {
@@ -31,6 +33,7 @@ export class ProgressComponent implements OnInit {
         downvote: 0,
         progress: 0,
         isFinished: false,
+        created: new Date(),
         lastUpdate: new Date()
     };
     booksInProgress: Observable<IBook[]> =
@@ -40,12 +43,24 @@ export class ProgressComponent implements OnInit {
     progressPercentage = 0;
     progress = 0;
 
+    userObservable = this.store.select(selectUser);
+    user: IUser = initialState.user;
+
     markAsFinished() {
         this.store.dispatch({
             type: "BOOK_IS_FINISHED",
             payload: this.book,
         });
+        const {badges, newBadges} = isBadgeCompleted(this.book, this.user, false);
+        this.store.dispatch({
+            type: 'UPDATE_BADGES',
+            payload: badges
+        })
+        if(newBadges.length === 0) {
         this.router.navigate(["/my-readings"]);
+        } else {
+          // animation badge puis redirection
+        }
     }
     titleButton = "Marquer comme terminé";
 
@@ -101,6 +116,7 @@ export class ProgressComponent implements OnInit {
     pages = new FormControl(0);
 
     ngOnInit(): void {
+      this.userObservable.subscribe(user => this.user = user)
         this.booksInProgress
             .pipe(
                 map((books) =>

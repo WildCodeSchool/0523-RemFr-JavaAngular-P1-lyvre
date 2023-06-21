@@ -1,0 +1,78 @@
+<section class="content-infos">
+    <h2>Informations du site</h2>
+
+    <p>
+        Afin de permettre l’accès à la culture et au loisir au plus grand
+        nombre, <strong>Lyvre</strong> permet de trouver les boîtes à livres les
+        plus proches de vous. <br />
+        <br />
+        Afin de motiver les plus jeunes à la lecture,
+        <strong>Lyvre</strong> propose un système de récompenses en fonction de
+        l’avancement des différentes lectures de l’utilisateur.
+    </p>
+</section>
+
+<h3>Contacter un administrateur</h3>
+
+<form>
+    <mat-stepper orientation="vertical" [linear]="isLinear" #stepper>
+        <mat-step [stepControl]="name">
+            <form [formGroup]="name">
+                <ng-template matStepLabel>Entrez votre nom</ng-template>
+                <mat-form-field>
+                    <mat-label>Nom</mat-label>
+                    <input
+                        matInput
+                        placeholder="Prénom, Nom"
+                        formControlName="nameCtrl"
+                        required
+                    />
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="email">
+            <form [formGroup]="email">
+                <ng-template matStepLabel
+                    >Entrez votre adresse email</ng-template
+                >
+                <mat-form-field>
+                    <mat-label>Email</mat-label>
+                    <input
+                        matInput
+                        formControlName="emailCtrl"
+                        placeholder="exemple@gmail.com"
+                        required
+                        email
+                    />
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Précédent</button>
+                    <button mat-button matStepperNext>Suivant</button>
+                </div>
+            </form>
+        </mat-step>
+        <mat-step [stepControl]="text">
+            <form [formGroup]="text" (ngSubmit)="formMessage()">
+                <ng-template matStepLabel>Entrez votre message</ng-template>
+                <mat-form-field>
+                    <mat-label>Message</mat-label>
+                    <textarea
+                        cols="30"
+                        rows="8"
+                        matInput
+                        formControlName="textCtrl"
+                        placeholder="Entrez votre message ici."
+                        required
+                    ></textarea>
+                </mat-form-field>
+                <div>
+                    <button mat-button matStepperPrevious>Précédent</button>
+                    <button mat-button type="submit">Envoyer</button>
+                </div>
+            </form>
+        </mat-step>
+    </mat-stepper>
+</form>
