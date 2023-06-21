@@ -9,6 +9,7 @@ export interface IBook {
     downvote: number;
     progress: number;
     isFinished: boolean;
+    created: Date;
     lastUpdate: Date;
 }
 
@@ -85,6 +86,23 @@ export interface IUser {
     password: string;
     reading_in_progress: IBook[];
     reading_finished: IBook[];
+    badges: IBadge[];
+    challenges: IChallenge[];
+    level: number;
+}
+
+export interface IBadge {
+    name: string;
+    description: string;
+    isFinished: boolean;
+    progress: number;
+    totalRequired: number;
+    condition?: string;
+}
+
+export interface IChallenge extends IBadge {
+    start: Date;
+    end: Date;
 }
 
 export interface FeatureCollection {

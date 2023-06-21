@@ -1,20 +1,11 @@
 import { IBook, IUser } from "src/app/utils/interface";
 import { createSelector } from "@ngrx/store";
 
+import { initialState } from "./initialState";
+
 export interface IUserState {
     readonly user: IUser;
 }
-
-export const initialState: IUserState = {
-    user: {
-        id: 0,
-        name: "test",
-        email: "",
-        password: "",
-        reading_in_progress: [],
-        reading_finished: [],
-    },
-};
 
 export const selectUserState = (state: any) => state;
 export const selectUser = createSelector(
@@ -191,6 +182,16 @@ export function reducer(state = initialState, action: any) {
             return {
                 ...state,
             };
+        }
+        case "UPDATE_BADGES": {
+            return {
+                ...state,
+                user: {
+                  ...state.user,
+                  badges: action.payload,
+                }
+            }
+
         }
         default:
             return state;
