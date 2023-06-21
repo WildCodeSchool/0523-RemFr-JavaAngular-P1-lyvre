@@ -1,0 +1,93 @@
+  [
+    {
+    "name" : "La tête dans les étoiles",
+    "description" : "Lire 5 livres de Science-Fiction",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Romantique",
+    "description" : "Lire 5 livres de Romance",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Fantaisiste",
+    "description" : "Lire 5 livres de Fantasy",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Biographe",
+    "description" : "Lire 5 Biographies",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Accro à l'adrénaline",
+    "description" : "Lire 5 Thrillers",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Amateur de frisson",
+    "description" : "Lire 5 livres d'Horreur",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Mon premier fan",
+    "description" : "Lire 5 livres d'un même auteur",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Un peu de changement",
+    "description" : "Visiter 3 boîtes à livres",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 3
+    },
+    {
+    "name" : "Guide touristique",
+    "description" : "Visiter 5 boîtes à livres",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Globe-trotter",
+    "description" : "Visiter 10 boîtes à livres",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 10
+    },
+    {
+    "name" : "Lecteur en herbe",
+    "description" : "Lire 3 livres dans le même mois",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 3
+    },
+    {
+    "name" : "Lecteur avancé",
+    "description" : "Lire 5 livres dans le même mois",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 5
+    },
+    {
+    "name" : "Expert en lecture",
+    "description" : "Lire 10 livres dans le même mois",
+    "isFinished" : false,
+    "progress" : 0,
+    "totalRequired": 10
+    }
+  ]

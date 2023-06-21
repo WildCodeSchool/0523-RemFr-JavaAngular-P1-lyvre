@@ -2,6 +2,7 @@
     "name": "1984",
     "author": "George Orwell",
     "genre": ["Dystopie", "Science Fiction", "Fiction politique"],
+    "description": "Dans un monde où la guerre est permanente et la surveillance omniprésente, Winston, un employé du ministère de la Vérité, tente de résister à l'oppression du Parti et de son chef Big Brother.",
     "pages": 328,
     "id": 1,
     "upvote": 152,
@@ -12,6 +13,7 @@
     "name": "Le meilleur des mondes",
     "author": "Aldous Huxley",
     "genre": ["Dystopie", "Science Fiction", "Fiction politique"],
+    "description": "Le meilleur des mondes est un livre écrit en 1931 par Aldous Huxley. Il imagine une société future dans laquelle la reproduction est entièrement médicalisée et où la population est conditionnée dès l'enfance pour être heureuse.",
     "pages": 288,
     "id": 2,
     "upvote": 124,
@@ -22,6 +24,7 @@
     "name": "La horde du contrevent",
     "author": "Alain Damasio",
     "genre": ["Science Fiction", "Fantasy"],
+    "description": "",
     "pages": 736,
     "id": 3,
     "upvote": 127,
@@ -196,6 +199,16 @@
     "upvote": 56,
     "downvote": 4,
     "image": "https://m.media-amazon.com/images/I/818Xfm0wAEL._AC_UF1000,1000_QL80_.jpg"
+},
+{
+  "name": "ça",
+  "author": "Stephen King",
+  "genre": ["Horreur"],
+  "pages": 576,
+  "id": 21,
+  "upvote": 56,
+  "downvote": 4,
+  "image": "https://m.media-amazon.com/images/I/81bKNQ1ZZKL._AC_UF1000,1000_QL80_.jpg"
 }
 
 ]

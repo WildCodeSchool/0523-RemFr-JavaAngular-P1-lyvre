@@ -1,14 +1,12 @@
 #nav-burger {
-    display: flex;
     box-sizing: content-box;
 }
 
 #logo-nav {
-    padding: 0, 5rem;
-    margin-right: auto;
-    margin-left: auto;
-    margin-top: auto;
-    margin-bottom: auto;
+    display: flex;
+    box-sizing: content-box;
+    justify-content: center;
+    margin-top: -40px;
 }
 
 a {
@@ -23,6 +21,6 @@ a > mat-icon {
     color: #0a0a0a;
 }
 
-img{
+img {
     height: 4rem;
 }

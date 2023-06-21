@@ -44,6 +44,7 @@ export class AddBookComponent implements OnInit {
         );
         if (selectedBook) {
             selectedBook.progress = 0;
+            selectedBook.created = new Date();
             selectedBook.lastUpdate = new Date();
             this.store.dispatch({
                 type: "ADD_BOOK_TO_READING_IN_PROGRESS",
