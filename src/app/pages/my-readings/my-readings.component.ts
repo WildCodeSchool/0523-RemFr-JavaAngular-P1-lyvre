@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { selectReadingsFinished, selectReadingsInProgress } from 'src/app/services/store/user.reducer';
@@ -12,7 +12,7 @@ import { IBook } from 'src/app/utils/interface';
 })
 export class MyReadingsComponent  {
 
-  constructor(private router: Router, private store: Store) {}
+  constructor(private router: Router, private store: Store, private activatedRoute: ActivatedRoute) {}
   titleButton = "Ajouter une lecture"
   titleButtonFinished = "Terminés"
   titleButtonInProgress = "En cours"
@@ -21,7 +21,7 @@ export class MyReadingsComponent  {
 
   booksInProgress : Observable<IBook[]> = this.store.select(selectReadingsInProgress) || [];
 
-  finished = false;
+  finished = this.activatedRoute.snapshot.paramMap.get("status") === "finished" ? true : false;
 
   redirectToAddBook() {
     this.router.navigate(['/add-book'])
