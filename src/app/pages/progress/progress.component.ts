@@ -57,12 +57,13 @@ export class ProgressComponent implements OnInit {
           payload: badges
       })
       if(newBadges.length === 0) {
-      this.router.navigate(["/my-readings"]);
+        this.router.navigate(["/my-readings", "finished"]);
       } else {
         // animation badge puis redirection
       }
     }
     titleButton = "Marquer comme terminé";
+    titleButtonSave = "Sauvegarder";
 
     isLiked = false;
     isDisliked = false;
@@ -90,6 +91,10 @@ export class ProgressComponent implements OnInit {
             type: "LIKE_OR_DISLIKE_BOOK",
             payload: { book: this.book, like: data },
         });
+    }
+
+    redirectToReadingInProgress() {
+        this.router.navigate(["/my-readings", "inProgress"]);
     }
 
     onSubmit() {

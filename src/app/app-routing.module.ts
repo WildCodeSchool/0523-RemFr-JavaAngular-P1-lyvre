@@ -12,7 +12,7 @@ const routes: Routes = [
     { path: "", component: DashboardComponent },
     { path: "book-box", component: BookBoxComponent },
     { path: "add-book", component: AddBookComponent },
-    { path: "my-readings", component: MyReadingsComponent },
+    { path: "my-readings/:status", component: MyReadingsComponent },
     { path: "progress/:id", component: ProgressComponent },
     { path: "contact", component: ContactComponent },
     { path: "**", component: PageNotFoundComponent },
