@@ -2,6 +2,7 @@ import { IBook, IUser } from "src/app/utils/interface";
 import { createSelector } from "@ngrx/store";
 
 import { initialState } from "./initialState";
+import { challengeBooks } from "./challengeBooks";
 
 export interface IUserState {
     readonly user: IUser;
@@ -12,6 +13,11 @@ export const selectUser = createSelector(
     selectUserState,
     (state: any) => state.userState.user
 );
+
+export const selectChallenge = createSelector(
+    selectUserState,
+    (state: any) => state.userState.user.challenges
+)
 
 export const selectReadingsInProgress = createSelector(
     selectUserState,
@@ -79,6 +85,7 @@ export function reducer(state = initialState, action: any) {
             const readingInProgress = [...state.user.reading_in_progress];
             //si il trouve un livre passe ici
             if (index !== -1) {
+                const challenges = challengeBooks(action.payload, state.user, true)
                 const readingFinished = [...state.user.reading_finished];
                 //ajoute aux livres terminés
                 readingFinished.push(book);
@@ -90,6 +97,7 @@ export function reducer(state = initialState, action: any) {
                         ...state.user,
                         reading_in_progress: readingInProgress,
                         reading_finished: readingFinished,
+                        challenges: challenges
                     },
                 };
             }
@@ -103,6 +111,7 @@ export function reducer(state = initialState, action: any) {
             );
             const readingInProgress = [...state.user.reading_in_progress];
             if (index !== -1) {
+                const challenges = challengeBooks(action.payload, state.user, false)
                 readingInProgress.splice(index, 1);
                 readingInProgress.push(action.payload);
                 return {
@@ -110,6 +119,7 @@ export function reducer(state = initialState, action: any) {
                     user: {
                         ...state.user,
                         reading_in_progress: readingInProgress,
+                        challenges: challenges
                     },
                 };
             }

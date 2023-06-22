@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Lire 3 jours de suite",
+    "description": "Lire 3 jours de suite",
+    "progress": 0,
+    "totalRequired": 3,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  },
+
+  {
+    "name": "Lire deux livres d'auteurs différents",
+    "description": "Lire deux livres d'auteurs différents",
+    "progress": 0,
+    "totalRequired": 2,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire deux livres de genres différents",
+    "description": "Lire deux livres de genres différents",
+    "progress": 0,
+    "totalRequired": 2,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  },
+  {
+    "name": "Finir un livre en 2 jours ou moins",
+    "description": "Finir un livre en 2 jours ou moins",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire un livre de plus de 500 pages",
+    "description": "Lire un livre de plus de 500 pages",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire un livre de science-fiction",
+    "description": "Lire un livre de science-fiction",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire un livre de fantasy",
+    "description": "Lire un livre de fantasy",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire un livre d'horreur",
+    "description": "Lire un livre d'horreur",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-11-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire un livre de romance",
+    "description": "Lire un livre de romance",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-11-30T23:59:59.000Z",
+    "start": "2019-11-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire un thriller",
+    "description": "Lire un thriller",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-11-30T23:59:59.000Z",
+    "start": "2019-11-01T00:00:00.000Z"
+  },
+  {
+    "name": "Lire un livre",
+    "description": "Lire un livre",
+    "progress": 0,
+    "totalRequired": 1,
+    "points": 100,
+    "end": "2019-12-31T23:59:59.000Z",
+    "start": "2019-12-01T00:00:00.000Z"
+  }
+]
