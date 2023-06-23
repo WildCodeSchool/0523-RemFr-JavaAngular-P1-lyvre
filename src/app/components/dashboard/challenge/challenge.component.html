@@ -4,11 +4,14 @@
     <div *ngIf="challenges.length !== 0">
       <ng-container *ngFor="let challenge of challenges; let i = index">
         <div *ngIf="i === currentSlide" class="slide" @carouselAnimation>
-            <h3>{{challenge.name}} ({{challenge.progress}}/{{challenge.totalRequired}})</h3>
-            <h4>{{challenge.points}} points</h4>
-            <div>
-              <mat-progress-bar class="mat-progress-bar" mode="determinate" value={{getPercentage(challenge)}}></mat-progress-bar>
-            </div>
+          <h3>{{challenge.name}} ({{challenge.progress}}/{{challenge.totalRequired}})</h3>
+          <h4>{{challenge.points}} points</h4>
+          <div *ngIf="!challenge.isFinished">
+            <mat-progress-bar class="mat-progress-bar" mode="determinate" value={{getPercentage(challenge)}}></mat-progress-bar>
+          </div>
+          <div *ngIf="challenge.isFinished">
+            <p class="finished">Félicitation, vous avez terminé ce défi! </p>
+          </div>
         </div>
       </ng-container>
     </div>

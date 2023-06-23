@@ -6,6 +6,7 @@ import { Observable, map } from "rxjs";
 import { isBadgeCompleted } from "src/app/services/store/badges";
 import { initialState } from "src/app/services/store/initialState";
 import { selectAllReadings, selectUser } from "src/app/services/store/user.reducer";
+import { getNextLevel } from "src/app/utils/function";
 import { IBook, IUser } from "src/app/utils/interface";
 
 @Component({
@@ -64,9 +65,14 @@ export class ProgressComponent implements OnInit {
     }
     titleButton = "Marquer comme terminé";
     titleButtonSave = "Sauvegarder";
-
+    totalPoints = 0;
+    showProgress = false;
     isLiked = false;
     isDisliked = false;
+    isFinished = false;
+    pointsNeedeedToLevelUp = 0;
+    newLevel = 0;
+    progressLevel = 0;
 
     bookLike() {
         this.isLiked = !this.isLiked;
@@ -99,23 +105,42 @@ export class ProgressComponent implements OnInit {
 
     onSubmit() {
         this.progress = this.pages.value || 0;
-        const book = { ...this.book };
-        book.progress = this.progress;
-        book.lastUpdate = new Date();
-        this.store.dispatch({
-            type: "BOOK_IS_UPDATED",
-            payload: book,
-        });
+
         if (this.progress == this.book.pages) {
-            this.progressPercentage = 100;
-        } else if (this.book.progress > this.book.pages) {
+          this.progressPercentage = 100;
+          this.isFinished = true;
+        } else if (this.progress > this.book.pages) {
             this.progressPercentage = 100;
             this.progress = this.book.pages;
+            this.pages.setValue(this.book.pages);
+            this.isFinished = true;
         } else {
             this.progressPercentage = Math.floor(
                 (this.progress / this.book.pages) * 100
             );
         }
+
+        const book = { ...this.book };
+        this.showProgress= true;
+        this.totalPoints = this.progress - book.progress;
+        this.pointsNeedeedToLevelUp = getNextLevel(this.user.points + this.totalPoints)
+        book.progress = this.progress;
+        book.isFinished = this.isFinished;
+        this.newLevel = Math.floor((this.user.points + this.totalPoints) / 100)
+        this.progressLevel = 100 - this.pointsNeedeedToLevelUp
+        book.lastUpdate = new Date();
+        if(!book.isFinished){
+        this.store.dispatch({
+            type: "BOOK_IS_UPDATED",
+            payload: book,
+        });
+      } else {
+        this.store.dispatch({
+            type: "BOOK_IS_FINISHED",
+            payload: book,
+        });
+      }
+
     }
 
     pages = new FormControl(0);
@@ -132,6 +157,7 @@ export class ProgressComponent implements OnInit {
                 if (book) this.book = book;
             });
         this.progress = this.book.progress;
+        this.isFinished = this.book.isFinished;
         //calculer le % d'avancée de lecture
         this.progressPercentage = Math.floor(
             (this.progress / this.book.pages) * 100

@@ -88,7 +88,13 @@ export interface IUser {
     reading_finished: IBook[];
     badges: IBadge[];
     challenges: IChallenge[];
-    level: number;
+    points: number;
+    image: string;
+}
+
+export interface ILevel {
+    level: number[];
+    name: string;
 }
 
 export interface IBadge {
@@ -98,12 +104,12 @@ export interface IBadge {
     progress: number;
     totalRequired: number;
     condition?: string;
-    points?: number;
 }
 
 export interface IChallenge extends IBadge {
     start: Date;
     end: Date;
+    points: number;
 }
 
 export interface FeatureCollection {

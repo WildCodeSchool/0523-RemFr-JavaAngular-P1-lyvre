@@ -85,7 +85,8 @@ export function reducer(state = initialState, action: any) {
             const readingInProgress = [...state.user.reading_in_progress];
             //si il trouve un livre passe ici
             if (index !== -1) {
-                const challenges = challengeBooks(action.payload, state.user, true)
+                const {challenges, pointsChallenges } = challengeBooks(action.payload, state.user, true)
+                const points = action.payload.progress - readingInProgress[index].progress;
                 const readingFinished = [...state.user.reading_finished];
                 //ajoute aux livres terminés
                 readingFinished.push(book);
@@ -97,7 +98,8 @@ export function reducer(state = initialState, action: any) {
                         ...state.user,
                         reading_in_progress: readingInProgress,
                         reading_finished: readingFinished,
-                        challenges: challenges
+                        challenges: challenges,
+                        points: state.user.points + points + pointsChallenges,
                     },
                 };
             }
@@ -111,7 +113,8 @@ export function reducer(state = initialState, action: any) {
             );
             const readingInProgress = [...state.user.reading_in_progress];
             if (index !== -1) {
-                const challenges = challengeBooks(action.payload, state.user, false)
+                const  {challenges, pointsChallenges } = challengeBooks(action.payload, state.user, false)
+                const points = action.payload.progress - readingInProgress[index].progress;
                 readingInProgress.splice(index, 1);
                 readingInProgress.push(action.payload);
                 return {
@@ -119,7 +122,8 @@ export function reducer(state = initialState, action: any) {
                     user: {
                         ...state.user,
                         reading_in_progress: readingInProgress,
-                        challenges: challenges
+                        challenges: challenges,
+                        points: state.user.points + points + pointsChallenges,
                     },
                 };
             }
