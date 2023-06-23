@@ -45,8 +45,10 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { MatStepperModule } from "@angular/material/stepper";
-import { ChallengeComponent } from './components/dashboard/challenge/challenge.component';
-import { LevelComponent } from './components/dashboard/level/level.component';
+import { ChallengeComponent } from "./components/dashboard/challenge/challenge.component";
+import { LevelComponent } from "./components/dashboard/level/level.component";
+import { DisplayBadgesComponent } from "./components/dashboard/display-badges/display-badges.component";
+import { ModalComponent } from "./components/modal/modal.component";
 
 @NgModule({
     declarations: [
@@ -76,6 +78,8 @@ import { LevelComponent } from './components/dashboard/level/level.component';
         PageNotFoundComponent,
         ChallengeComponent,
         LevelComponent,
+        DisplayBadgesComponent,
+        ModalComponent,
     ],
     imports: [
         NgChartsModule,

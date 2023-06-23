@@ -72,7 +72,7 @@ export interface Interface1Response {
     facet_groups: FacetGroup[];
 }
 
-export interface ApiBookBox{
+export interface ApiBookBox {
     nhits: number;
     parameters: Interface1Parameters;
     records: RecordBookBox[];
@@ -104,6 +104,7 @@ export interface IBadge {
     progress: number;
     totalRequired: number;
     condition?: string;
+    image?: string;
 }
 
 export interface IChallenge extends IBadge {
@@ -113,39 +114,39 @@ export interface IChallenge extends IBadge {
 }
 
 export interface FeatureCollection {
-  type: string;
-  version: string;
-  features: Feature[];
-  attribution: string;
-  licence: string;
-  query: string;
-  limit: number;
+    type: string;
+    version: string;
+    features: Feature[];
+    attribution: string;
+    licence: string;
+    query: string;
+    limit: number;
 }
 
 export interface Feature {
-  type: string;
-  geometry: Geometry;
-  properties: Properties;
+    type: string;
+    geometry: Geometry;
+    properties: Properties;
 }
 
 export interface Geometry {
-  type: string;
-  coordinates: [number, number];
+    type: string;
+    coordinates: [number, number];
 }
 
 export interface Properties {
-  label: string;
-  score: number;
-  housenumber: string;
-  id: string;
-  type: string;
-  name: string;
-  postcode: string;
-  citycode: string;
-  x: number;
-  y: number;
-  city: string;
-  context: string;
-  importance: number;
-  street: string;
+    label: string;
+    score: number;
+    housenumber: string;
+    id: string;
+    type: string;
+    name: string;
+    postcode: string;
+    citycode: string;
+    x: number;
+    y: number;
+    city: string;
+    context: string;
+    importance: number;
+    street: string;
 }

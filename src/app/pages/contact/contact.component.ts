@@ -22,9 +22,17 @@ export class ContactComponent {
     constructor(private _formBuilder: FormBuilder) {}
 
     formMessage() {
-        console.log(JSON.stringify(this.name.value.nameCtrl, null, 4));
-        console.log(JSON.stringify(this.email.value.emailCtrl, null, 4));
-        console.log(JSON.stringify(this.text.value.textCtrl, null, 4));
-        alert("Votre message a bien été envoyé.");
+        if (this.text.valid) {
+            console.log(
+                JSON.stringify("nom : " + this.name.value.nameCtrl, null, 4)
+            );
+            console.log(
+                JSON.stringify("email : " + this.email.value.emailCtrl, null, 4)
+            );
+            console.log(
+                JSON.stringify("message : " + this.text.value.textCtrl, null, 4)
+            );
+            alert("Votre message a bien été envoyé.");
+        }
     }
 }

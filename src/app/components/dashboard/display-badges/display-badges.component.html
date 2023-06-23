@@ -1,0 +1,59 @@
+<!-- eslint-disable @angular-eslint/template/interactive-supports-focus -->
+<!-- eslint-disable @angular-eslint/template/click-events-have-key-events -->
+<div *ngFor="let badge of badges; let i = index" class="badge-list">
+    <div *ngIf="i < numberOfBadges">
+        <div
+            *ngIf="badge.isFinished === false"
+            (click)="modalService.open('modal-' + badge.name)"
+        >
+            <img
+                src="https://i.imgur.com/OO2lDdn.png"
+                width="120px"
+                alt="Badge non-obtenu"
+                id="badgeNonAcquis"
+            />
+            <p>{{ badge.name }}</p>
+        </div>
+        <div
+            *ngIf="badge.isFinished === true"
+            (click)="modalService.open('modal-' + badge.name)"
+        >
+            <img
+                src="https://i.imgur.com/LAx6DEa.png"
+                width="120px"
+                alt="Badge obtenu"
+                id="badgeAcquis"
+            />
+            <p>{{ badge.name }}</p>
+        </div>
+
+        <jw-modal id="modal-{{ badge.name }}">
+            <h1>{{ badge.name }}</h1>
+            <p>
+                {{ badge.description }}
+            </p>
+
+            <p>{{ badge.progress }} / {{ badge.totalRequired }}</p>
+            <mat-progress-bar
+                class="mat-progress-bar"
+                mode="determinate"
+                value="{{ barProgression(badge) }}"
+            ></mat-progress-bar>
+            <button (click)="modalService.close()">Fermer</button>
+        </jw-modal>
+    </div>
+</div>
+<div class="bouton">
+    <app-button
+        *ngIf="numberOfBadges === 4"
+        (click)="showMoreBadges()"
+        [title]="seeMore"
+    >
+    </app-button>
+    <app-button
+        *ngIf="numberOfBadges !== 4"
+        (click)="showLessBadges()"
+        [title]="seeLess"
+    >
+    </app-button>
+</div>
