@@ -1,8 +1,11 @@
 <!--Afficher l'image du livre selectionné-->
 <div id="page-content">
-  <div *ngIf="showBadgeModal">
-    <app-modal-badges [badges]="newBadges" (closeBadgeModal)="closeModal()"></app-modal-badges>
-  </div>
+    <div *ngIf="showBadgeModal">
+        <app-modal-badges
+            [badges]="newBadges"
+            (closeBadgeModal)="closeModal()"
+        ></app-modal-badges>
+    </div>
     <div id="book-content">
         <div>
             <img src="{{ this.book.image }}" alt="{{ this.book.name }}" />
@@ -42,7 +45,26 @@
                 value="{{ book.pages }}"
                 max="{{ this.book.pages }}"
             />
-            <button type="button" (click)="onSubmit()">Enregistrer</button>
+            <div *ngIf="showProgress" class="progress-level">
+                <h4 class="pointsEarned">Félicitation 🎉 🎉</h4>
+                <h4 class="pointsEarned">
+                    Votre lecture vous a fait gagné
+                    {{ this.totalPoints }} points !
+                </h4>
+                <p class="newLevel">Niveau {{ this.newLevel }}</p>
+                <mat-progress-bar
+                    class="mat-progress-bar"
+                    mode="determinate"
+                    value="{{ this.progressLevel }}"
+                ></mat-progress-bar>
+                <p class="nextLevel">
+                    Plus que {{ this.pointsNeedeedToLevelUp }} points pour le
+                    prochain niveau !
+                </p>
+            </div>
+            <button *ngIf="!isFinished" type="button" (click)="onSubmit()">
+                Enregistrer
+            </button>
         </form>
     </div>
 
@@ -64,7 +86,7 @@
     </div>
 
     <app-button
-        *ngIf="!book.isFinished"
+        *ngIf="!isFinished"
         [title]="titleButton"
         [onClick]="markAsFinished.bind(this, book)"
     >
