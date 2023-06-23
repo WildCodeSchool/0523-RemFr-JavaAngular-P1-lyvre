@@ -86,12 +86,13 @@
     </div>
 
     <app-button
-        *ngIf="!isFinished"
+        *ngIf="!book.isFinished"
         [title]="titleButton"
         [onClick]="markAsFinished.bind(this, book)"
     >
     </app-button>
     <app-button
+        *ngIf="!book.isFinished"
         [title]="titleButtonSave"
         [onClick]="redirectToReadingInProgress"
     >
