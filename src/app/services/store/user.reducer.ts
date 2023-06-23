@@ -38,6 +38,11 @@ export const selectAllReadings = createSelector(
     }
 );
 
+export const selectAllBadges = createSelector(
+    selectUserState,
+    (state: any) => state.userState.user.badges
+);
+
 export function reducer(state = initialState, action: any) {
     switch (action.type) {
         case "USER_LOGIN":
@@ -201,11 +206,10 @@ export function reducer(state = initialState, action: any) {
             return {
                 ...state,
                 user: {
-                  ...state.user,
-                  badges: action.payload,
-                }
-            }
-
+                    ...state.user,
+                    badges: action.payload,
+                },
+            };
         }
         default:
             return state;
