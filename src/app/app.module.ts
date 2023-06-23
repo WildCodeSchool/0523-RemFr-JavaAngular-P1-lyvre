@@ -45,6 +45,7 @@ import { FooterComponent } from "./components/footer/footer.component";
 import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.component";
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { MatStepperModule } from "@angular/material/stepper";
+import { ChallengeComponent } from './components/dashboard/challenge/challenge.component';
 
 @NgModule({
     declarations: [
@@ -72,6 +73,7 @@ import { MatStepperModule } from "@angular/material/stepper";
         FooterComponent,
         ContactComponent,
         PageNotFoundComponent,
+        ChallengeComponent,
     ],
     imports: [
         NgChartsModule,

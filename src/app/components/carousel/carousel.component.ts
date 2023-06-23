@@ -2,8 +2,6 @@ import { Component, Input } from "@angular/core";
 import {
     trigger,
     transition,
-    style,
-    animate,
     useAnimation,
 } from "@angular/animations";
 import { fadeIn, fadeOut, scaleIn, scaleOut } from "./carousel.animations";
@@ -32,6 +30,7 @@ import { Router } from "@angular/router";
         ]),
     ],
 })
+
 export class CarouselComponent {
     //je recup les slides ici
 

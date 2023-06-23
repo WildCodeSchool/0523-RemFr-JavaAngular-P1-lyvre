@@ -98,6 +98,7 @@ export interface IBadge {
     progress: number;
     totalRequired: number;
     condition?: string;
+    points?: number;
 }
 
 export interface IChallenge extends IBadge {

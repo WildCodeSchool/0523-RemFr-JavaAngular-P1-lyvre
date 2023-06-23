@@ -1,0 +1,23 @@
+<div class="container_section_dashboard top">
+  <h2 class="title_section_dashboard">Défis hebdomadaires</h2>
+  <div class="carousel">
+    <div *ngIf="challenges.length !== 0">
+      <ng-container *ngFor="let challenge of challenges; let i = index">
+        <div *ngIf="i === currentSlide" class="slide" @carouselAnimation>
+            <h3>{{challenge.name}} ({{challenge.progress}}/{{challenge.totalRequired}})</h3>
+            <h4>{{challenge.points}} points</h4>
+            <div>
+              <mat-progress-bar class="mat-progress-bar" mode="determinate" value={{getPercentage(challenge)}}></mat-progress-bar>
+            </div>
+        </div>
+      </ng-container>
+    </div>
+  <button class="control prev" (click)="onPreviousClick()">
+    <span class="arrow left"></span>
+  </button>
+  <button class="control next" (click)="onNextClick()">
+    <span class="arrow right"></span>
+  </button>
+</div>
+
+
