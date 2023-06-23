@@ -3,6 +3,8 @@
   "name": "Utilisateur1",
   "email": "utilisateur@gmail.com",
   "password": "Test1234*",
+  "points": 950,
+  "image": "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
   "reading_in_progress": [
     {
       "name": "1984",

@@ -85,6 +85,7 @@ export const initialState: IUserState = {
         totalRequired: 10
         }],
       challenges: [],
-      level: 0
+      points: 0,
+      image: ""
   },
 };

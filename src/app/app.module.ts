@@ -46,6 +46,7 @@ import { PageNotFoundComponent } from "./pages/page-not-found/page-not-found.com
 import { CarouselComponent } from "./components/carousel/carousel.component";
 import { MatStepperModule } from "@angular/material/stepper";
 import { ChallengeComponent } from './components/dashboard/challenge/challenge.component';
+import { LevelComponent } from './components/dashboard/level/level.component';
 
 @NgModule({
     declarations: [
@@ -74,6 +75,7 @@ import { ChallengeComponent } from './components/dashboard/challenge/challenge.c
         ContactComponent,
         PageNotFoundComponent,
         ChallengeComponent,
+        LevelComponent,
     ],
     imports: [
         NgChartsModule,

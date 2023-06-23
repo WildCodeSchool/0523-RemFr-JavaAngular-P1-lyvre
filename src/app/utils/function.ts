@@ -12,3 +12,8 @@ export const month = [
   "novembre",
   "décembre"
 ];
+
+
+export const getNextLevel = (level: number) => {
+  return (100 - (level % 100));
+}
