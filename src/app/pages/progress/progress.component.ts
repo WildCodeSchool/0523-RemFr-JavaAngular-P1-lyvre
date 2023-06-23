@@ -5,7 +5,10 @@ import { Store } from "@ngrx/store";
 import { Observable, map } from "rxjs";
 import { isBadgeCompleted } from "src/app/services/store/badges";
 import { initialState } from "src/app/services/store/initialState";
-import { selectAllReadings, selectUser } from "src/app/services/store/user.reducer";
+import {
+    selectAllReadings,
+    selectUser,
+} from "src/app/services/store/user.reducer";
 import { getNextLevel } from "src/app/utils/function";
 import { IBadge, IBook, IUser } from "src/app/utils/interface";
 
@@ -35,7 +38,7 @@ export class ProgressComponent implements OnInit {
         progress: 0,
         isFinished: false,
         created: new Date(),
-        lastUpdate: new Date()
+        lastUpdate: new Date(),
     };
     booksInProgress: Observable<IBook[]> =
         this.store.select(selectAllReadings) || [];
@@ -44,34 +47,37 @@ export class ProgressComponent implements OnInit {
     progressPercentage = 0;
     progress = 0;
 
-    newBadges : IBadge[] = [];
+    newBadges: IBadge[] = [];
 
     userObservable = this.store.select(selectUser);
     user: IUser = initialState.user;
 
-
     showBadgeModal = false;
 
     closeModal() {
-      this.showBadgeModal = false;
+        this.showBadgeModal = false;
     }
 
     markAsFinished() {
-      this.store.dispatch({
-          type: "BOOK_IS_FINISHED",
-          payload: this.book,
-      });
-      const {badges, newBadges} = isBadgeCompleted(this.book, this.user, false);
-      this.store.dispatch({
-          type: 'UPDATE_BADGES',
-          payload: badges
-      })
-      if(newBadges.length === 0) {
-        this.router.navigate(["/my-readings", "finished"]);
-      } else {
-        this.newBadges = newBadges;
-        this.showBadgeModal = true;
-      }
+        this.store.dispatch({
+            type: "BOOK_IS_FINISHED",
+            payload: this.book,
+        });
+        const { badges, newBadges } = isBadgeCompleted(
+            this.book,
+            this.user,
+            false
+        );
+        this.store.dispatch({
+            type: "UPDATE_BADGES",
+            payload: badges,
+        });
+        if (newBadges.length === 0) {
+            this.router.navigate(["/my-readings", "finished"]);
+        } else {
+            this.newBadges = newBadges;
+            this.showBadgeModal = true;
+        }
     }
 
     titleButton = "Marquer comme terminé";
@@ -118,8 +124,8 @@ export class ProgressComponent implements OnInit {
         this.progress = this.pages.value || 0;
 
         if (this.progress == this.book.pages) {
-          this.progressPercentage = 100;
-          this.isFinished = true;
+            this.progressPercentage = 100;
+            this.isFinished = true;
         } else if (this.progress > this.book.pages) {
             this.progressPercentage = 100;
             this.progress = this.book.pages;
@@ -132,32 +138,30 @@ export class ProgressComponent implements OnInit {
         }
 
         const book = { ...this.book };
-        this.showProgress= true;
+        this.showProgress = true;
         this.totalPoints = this.progress - book.progress;
-        this.pointsNeedeedToLevelUp = getNextLevel(this.user.points + this.totalPoints)
+        this.pointsNeedeedToLevelUp = getNextLevel(
+            this.user.points + this.totalPoints
+        );
         book.progress = this.progress;
         book.isFinished = this.isFinished;
-        this.newLevel = Math.floor((this.user.points + this.totalPoints) / 100)
-        this.progressLevel = 100 - this.pointsNeedeedToLevelUp
+        this.newLevel = Math.floor((this.user.points + this.totalPoints) / 100);
+        this.progressLevel = 100 - this.pointsNeedeedToLevelUp;
         book.lastUpdate = new Date();
-        if(!book.isFinished){
-        this.store.dispatch({
-            type: "BOOK_IS_UPDATED",
-            payload: book,
-        });
-      } else {
-        this.store.dispatch({
-            type: "BOOK_IS_FINISHED",
-            payload: book,
-        });
-      }
-
+        if (!book.isFinished) {
+            this.store.dispatch({
+                type: "BOOK_IS_UPDATED",
+                payload: book,
+            });
+        } else {
+            this.markAsFinished();
+        }
     }
 
     pages = new FormControl(0);
 
     ngOnInit(): void {
-      this.userObservable.subscribe(user => this.user = user)
+        this.userObservable.subscribe((user) => (this.user = user));
         this.booksInProgress
             .pipe(
                 map((books) =>
