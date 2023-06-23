@@ -12,6 +12,8 @@ export class ButtonComponent {
   constructor(private router: Router, private store: Store) {}
 
   @Input() title = '';
-  @Input() onClick = () => { console.log("init")};
+  @Input() onClick = () => {
+    //
+  };
 
 }

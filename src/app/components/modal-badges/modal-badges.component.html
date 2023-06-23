@@ -1,0 +1,30 @@
+<div class="modal">
+  <div class="content-modal">
+    <div *ngIf="badges.length === 1">
+      <h2> Félicitation! Vous avez gagné un badge! </h2>
+    </div>
+    <div *ngIf="badges.length > 1">
+      <h2> Félicitation! Vous avez gagné {{badges.length}} badges! </h2>
+    </div>
+    <ng-container *ngFor="let badge of badges; let i = index">
+      <div *ngIf="i === currentSlide" class="slide" @carouselAnimation>
+        <h3>{{badge.name}}</h3>
+        <img
+        src="https://i.imgur.com/LAx6DEa.png"
+        width="120px"
+        alt="Badge obtenu"
+        id="badgeAcquis"
+    />      </div>
+    </ng-container>
+
+    <div (click)="closeModal()" class="close-modal">X</div>
+    <div *ngIf="badges.length > 1">
+      <button class="control prev" (click)="onPreviousClick()">
+        <span class="arrow left"></span>
+      </button>
+      <button class="control next" (click)="onNextClick()">
+        <span class="arrow right"></span>
+      </button>
+    </div>
+  </div>
+</div>

@@ -49,6 +49,7 @@ import { ChallengeComponent } from "./components/dashboard/challenge/challenge.c
 import { LevelComponent } from "./components/dashboard/level/level.component";
 import { DisplayBadgesComponent } from "./components/dashboard/display-badges/display-badges.component";
 import { ModalComponent } from "./components/modal/modal.component";
+import { ModalBadgesComponent } from './components/modal-badges/modal-badges.component';
 
 @NgModule({
     declarations: [
@@ -80,6 +81,7 @@ import { ModalComponent } from "./components/modal/modal.component";
         LevelComponent,
         DisplayBadgesComponent,
         ModalComponent,
+        ModalBadgesComponent,
     ],
     imports: [
         NgChartsModule,
