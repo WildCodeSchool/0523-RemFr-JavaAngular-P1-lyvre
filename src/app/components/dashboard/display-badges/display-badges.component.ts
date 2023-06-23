@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from "@angular/core";
+import { Component, Input } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { IBadge } from "src/app/utils/interface";
 import { ModalService } from "src/app/services/modal/modal.service";
@@ -8,7 +8,7 @@ import { ModalService } from "src/app/services/modal/modal.service";
     templateUrl: "./display-badges.component.html",
     styleUrls: ["./display-badges.component.scss"],
 })
-export class DisplayBadgesComponent implements OnInit {
+export class DisplayBadgesComponent  {
     constructor(private store: Store, protected modalService: ModalService) {}
 
     @Input()
@@ -22,15 +22,8 @@ export class DisplayBadgesComponent implements OnInit {
 
     seeLess = "Voir moins";
 
-    ngOnInit(): void {
-        // this.badgesToShow = this.badges.slice(0, 4);
-        // console.log(this.badges);
-        console.log(this.badges);
-    }
-
     showMoreBadges() {
         this.numberOfBadges = this.badges.length;
-        console.log("test");
     }
 
     showLessBadges() {

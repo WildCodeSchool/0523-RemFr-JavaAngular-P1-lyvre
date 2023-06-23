@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 import { selectUser } from 'src/app/services/store/user.reducer';
 import { ILevel } from 'src/app/utils/interface';
 import { LevelService } from 'src/app/services/level/level.service';
+import { getNextLevel } from 'src/app/utils/function';
 
 @Component({
   selector: 'app-level',
@@ -23,6 +24,8 @@ export class LevelComponent implements OnInit{
     name: "",
     level: []
   }
+  pointsNeedeedToLevelUp = 0;
+  progressLevel = 0;
 
   ngOnInit(): void {
     this.user.subscribe((user) => {
@@ -30,10 +33,13 @@ export class LevelComponent implements OnInit{
       this.level = Math.floor(this.points/100)
       this.image = user.image;
       this.name= user.name;
+      this.pointsNeedeedToLevelUp = getNextLevel(this.points);
+      this.progressLevel = 100 - this.pointsNeedeedToLevelUp;
     });
     this.service.getLevels().subscribe((levels) => {
       this.levels = levels;
       this.levels.map((level) => level.level.includes(this.level) && (this.fullLevel = level))
     })
+
   }
 }

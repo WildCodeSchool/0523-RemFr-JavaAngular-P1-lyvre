@@ -7,7 +7,7 @@ import { isBadgeCompleted } from "src/app/services/store/badges";
 import { initialState } from "src/app/services/store/initialState";
 import { selectAllReadings, selectUser } from "src/app/services/store/user.reducer";
 import { getNextLevel } from "src/app/utils/function";
-import { IBook, IUser } from "src/app/utils/interface";
+import { IBadge, IBook, IUser } from "src/app/utils/interface";
 
 @Component({
     selector: "app-progress",
@@ -44,8 +44,17 @@ export class ProgressComponent implements OnInit {
     progressPercentage = 0;
     progress = 0;
 
+    newBadges : IBadge[] = [];
+
     userObservable = this.store.select(selectUser);
     user: IUser = initialState.user;
+
+
+    showBadgeModal = false;
+
+    closeModal() {
+      this.showBadgeModal = false;
+    }
 
     markAsFinished() {
       this.store.dispatch({
@@ -60,9 +69,11 @@ export class ProgressComponent implements OnInit {
       if(newBadges.length === 0) {
         this.router.navigate(["/my-readings", "finished"]);
       } else {
-        // animation badge puis redirection
+        this.newBadges = newBadges;
+        this.showBadgeModal = true;
       }
     }
+
     titleButton = "Marquer comme terminé";
     titleButtonSave = "Sauvegarder";
     totalPoints = 0;

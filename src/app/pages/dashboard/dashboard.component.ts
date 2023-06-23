@@ -16,7 +16,19 @@ export class DashboardComponent implements OnInit {
     badges: IBadge[] = [];
 
     ngOnInit(): void {
-        this.badgesObservable.subscribe((badge) => (this.badges = badge));
+        this.badgesObservable.subscribe((badge) => {
+          this.badges = badge.slice();
+          this.badges.sort((a, b) => {
+            if (a.isFinished && !b.isFinished) {
+              return -1;
+            } else if (!a.isFinished && b.isFinished) {
+              return 1;
+            } else {
+              return 0;
+            }
+          });
+
+        });
     }
     constructor(private store: Store) {}
 }

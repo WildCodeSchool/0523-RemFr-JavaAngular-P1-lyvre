@@ -144,12 +144,27 @@
         }
     ],
     "challenges": [
-        {
-            "name": "Lire 1 livre",
-            "start": "24 juin",
-            "end": "27 juin ",
-            "progress": 2,
-            "totalRequired": 10
-        }
-    ]
+      {
+          "id": 1,
+          "name": "Lire 3 jours de suite",
+          "description": "Lire 3 jours de suite",
+          "progress": 0,
+          "totalRequired": 3,
+          "isFinished": false,
+          "points": 100,
+          "start": "2023-06-18T23:59:59.000Z",
+          "end": "2023-06-25T00:00:00.000Z"
+      },
+      {
+          "id": 2,
+          "name": "Lire deux livres d'auteurs différents",
+          "description": "Lire deux livres d'auteurs différents",
+          "progress": 0,
+          "isFinished": false,
+          "totalRequired": 2,
+          "points": 200,
+          "start": "2023-06-18T23:59:59.000Z",
+          "end": "2023-06-25T00:00:00.000Z"
+      }
+  ]
 }

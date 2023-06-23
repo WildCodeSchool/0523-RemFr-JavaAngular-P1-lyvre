@@ -1,5 +1,8 @@
 <!--Afficher l'image du livre selectionné-->
 <div id="page-content">
+  <div *ngIf="showBadgeModal">
+    <app-modal-badges [badges]="newBadges" (closeBadgeModal)="closeModal()"></app-modal-badges>
+  </div>
     <div id="book-content">
         <div>
             <img src="{{ this.book.image }}" alt="{{ this.book.name }}" />
@@ -72,68 +75,3 @@
     >
     </app-button>
 </div>
-
-<div class="progress-bar">
-    <h3>Ma progression : {{ this.progressPercentage }}%</h3>
-    <p>{{ this.progress }}/{{ this.book.pages }} pages</p>
-    <mat-progress-bar
-        class="mat-progress-bar"
-        mode="determinate"
-        value="{{ this.progressPercentage }}"
-    ></mat-progress-bar>
-
-    <form>
-        <label for="progress">Nombre de pages lues </label>
-        <input
-            [formControl]="pages"
-            type="number"
-            value="{{ book.pages }}"
-            max="{{ this.book.pages }}"
-        />
-        <div *ngIf="showProgress" class="progress-level">
-            <h4 class="pointsEarned">Félicitation 🎉 🎉</h4>
-            <h4 class="pointsEarned">
-                Votre lecture vous a fait gagné {{ this.totalPoints }} points !
-            </h4>
-            <p class="newLevel">Niveau {{ this.newLevel }}</p>
-            <mat-progress-bar
-                class="mat-progress-bar"
-                mode="determinate"
-                value="{{ this.progressLevel }}"
-            ></mat-progress-bar>
-            <p class="nextLevel">
-                Plus que {{ this.pointsNeedeedToLevelUp }} points pour le
-                prochain niveau !
-            </p>
-        </div>
-        <button *ngIf="!isFinished" type="button" (click)="onSubmit()">
-            Enregistrer
-        </button>
-    </form>
-</div>
-
-<div class="like">
-    <span>
-        <mat-icon
-            (click)="likeOrDislike('like'); bookLike()"
-            [ngClass]="{ liked: isLiked, disliked: false }"
-            id="thumb_up"
-            >thumb_up</mat-icon
-        >
-    </span>
-    <mat-icon
-        (click)="likeOrDislike('dislike'); bookDislike()"
-        [ngClass]="{ disliked: isDisliked, liked: false }"
-        id="thumb_down"
-        >thumb_down</mat-icon
-    >
-</div>
-
-<app-button
-    *ngIf="!isFinished"
-    [title]="titleButton"
-    [onClick]="markAsFinished.bind(this, book)"
->
-</app-button>
-<app-button [title]="titleButtonSave" [onClick]="redirectToReadingInProgress">
-</app-button>

@@ -7,7 +7,9 @@ import { Component, Input } from '@angular/core';
 })
 export class SmallButtonComponent {
   @Input() title = '';
-  @Input() onClick = () => { console.log("init")};
+  @Input() onClick = () => {
+    //
+  };
   @Input() display = false;
 }
 
